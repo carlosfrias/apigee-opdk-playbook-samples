@@ -1,0 +1,44 @@
+---
+- hosts: planet
+  pre_tasks:
+  - name: Load credentials from encrypted file
+    include_vars: '~/.apigee/credentials.yml'
+    tags:
+    - os-ds
+    - os-ms
+    - os-rmp
+    - os-qpid
+    - os-pg
+    - ds
+    - ms
+    - rmp
+    - qpid
+    - pg
+    - pgmaster
+    - pgstandby
+    - openjdk
+    - bootstrap
+
+  - name: Load installation settings for {{ install_profile }}
+    include_vars: 'installation_settings-{{ install_profile }}.yml'
+    tags:
+    - os-ds
+    - os-ms
+    - os-rmp
+    - os-qpid
+    - os-pg
+    - ds
+    - ms
+    - rmp
+    - qpid
+    - pg
+    - pgmaster
+    - pgstandby
+    - openjdk
+    - bootstrap
+
+  roles:
+  - opdk-setup-selinux-disable
+  - opdk-shutdown-iptables
+
+- include: opdk-setup-{{ install_profile }}.yml

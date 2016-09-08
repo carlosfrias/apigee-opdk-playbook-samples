@@ -37,3 +37,18 @@
 
 - src: https://github.com/carlosfrias/apigee-opdk-shutdown-iptables
   name: opdk-shutdown-iptables
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-org-config
+  name: opdk-setup-org-config
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-org
+  name: opdk-setup-org
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-validate
+  name: opdk-setup-validate
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-validate-cleanup
+  name: opdk-setup-validate-cleanup
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-apigee-log-files
+  name: opdk-setup-apigee-log-files

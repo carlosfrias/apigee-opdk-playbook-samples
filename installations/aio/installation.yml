@@ -1,0 +1,61 @@
+---
+- hosts: planet
+  become: yes
+  pre_tasks:
+
+  - name: Load credentials from encrypted file
+    include_vars: '~/.apigee/credentials.yml'
+
+  tasks:
+  - name: install selinux python bindings
+    yum:
+      name: libselinux-python
+      state: present
+    when: ansible_bios_version | lower | search('virtualbox')
+
+  - setup:
+
+
+
+- include: facts.yml
+
+- include: update-root-user.yml
+  vars:
+    hosts: planet
+
+- include: opdk-setup-os.yml
+  tags:
+  - os
+  - common
+
+- hosts: dc-1
+  strategy: free
+  roles:
+  - opdk-setup-openjdk
+  tags:
+  - openjdk
+  - common
+
+- include: opdk-setup-bootstrap.yml
+
+- include: opdk-setup-installer.yml
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'planet'
+    component_profile: 'aio'
+  tags:
+  - aio
+
+- include: opdk-setup-org.yml
+
+- include: opdk-setup-validate.yml
+
+- include: opdk-setup-validate-cleanup.yml
+
+- hosts: dc-1
+  strategy: free
+  roles:
+  - opdk-setup-apigee-log-files
+  tags:
+  - logs

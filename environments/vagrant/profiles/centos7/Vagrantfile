@@ -26,21 +26,17 @@ expose_graphite_port = 9090
 grafana_http_port = 3000
 
 local_address = "172.28.128.55"
+vm_memory = 8192
 
 Vagrant.configure(2) do |config|
   config.ssh.insert_key = false
-  # config.vm.box = "nrel/CentOS-6.5-x86_64"
-  # config.vm.box = "nrel/CentOS-6.7-x86_64"
+
   config.vm.box = "centos/7"
-  # config.vm.box = "boxcutter/ol65"
-  # config.vm.box = "boxcutter/ol67"
-  # config.vm.box = "boxcutter/ol72"
-  # config.vm.box = "uclbioresource/oracle68"
 
   config.vm.define "aio_node" do |node|
+
     node.vm.hostname = '127.0.0.1'
     node.vm.network "private_network", ip: local_address
-
 
     node.vm.network "forwarded_port", guest: ms_http_port, host: ms_http_port
     node.vm.network "forwarded_port", guest: ms_jmx_port, host: ms_jmx_port
@@ -68,29 +64,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provider :virtualbox do |vb|
-    # vmdk_path = '/Users/carlosfrias/.vagrant.d/boxes/uclbioresource-VAGRANTSLASH-oracle68/1.0.0/virtualbox'
-    # tmp1 = vmdk_path + '/' + 'box-disk1.vmdk'
-    # tmp2 = vmdk_path + '/' + 'resized-disk.vdi'
-    # tmp3 = vmdk_path + '/' + 'backup-disk.vdi'
-
-    # %x[rm -f #{tmp2}]
-    # vb.customize "pre-boot", ["closemedium", tmp2]
-    # vb.customize "pre-boot", ["clonehd",  tmp1, tmp2, "--format", "VDI"]
-    # vb.customize "pre-boot", ["modifyhd", tmp2, "--resize", "32678"]
-    # vb.customize "pre-boot", ["clonehd",  tmp2, tmp3, "--format", "VMDK"]
-
-    # %x[rm -f #{tmp1} #{tmp2}]
-    # %x[mv #{tmp3} #{tmp1}]
-    # vb.customize "pre-boot", ["closemedium", tmp2]
-    # vb.customize "pre-boot", ["closemedium", tmp3]
-
-    vb.memory = 8192
+    vb.memory = vm_memory
   end
-
-  # config.vm.provision :ansible do |ansible|
-  #   ansible.playbook = "opdk-setup-installation.yml"
-  #   ansible.verbose = "vv"
-  #   ansible.inventory_path = 'inventory/vagrant'
-  # end
 
 end

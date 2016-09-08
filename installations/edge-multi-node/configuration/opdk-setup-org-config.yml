@@ -1,0 +1,6 @@
+---
+- hosts: '{{ hosts }}'
+  strategy: free
+  roles:
+  - opdk-setup-org-config
+

@@ -1,0 +1,66 @@
+---
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-ds'
+    component_profile: 'ds'
+  tags:
+  - ds
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-ms'
+    component_profile: 'ms'
+  tags:
+  - ms
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    component_profile: 'rmp'
+  tags:
+  - rmp
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-qpid'
+    component_profile: 'qs'
+  tags:
+  - qpid
+
+- include: components/opdk-setup-postgres-master.yml
+  vars:
+    hosts: 'dc-1-pgmaster'
+  tags:
+  - pgmaster
+
+- include: components/opdk-setup-postgres-standby.yml
+  vars:
+    hosts: 'dc-1-pgstandby'
+  tags:
+  - pgstandby
+
+- include: configuration/opdk-setup-org-config.yml
+  vars:
+    hosts: 'dc-1-ms'
+  tags:
+  - org-config
+
+- include: configuration/opdk-setup-org.yml
+  vars:
+    hosts: 'dc-1-ms'
+  tags:
+  - org
+
+- include: validation/opdk-setup-validate.yml
+  tags:
+  - validate
+
+- include: validation/opdk-setup-status.yml
+  vars:
+    hosts: 'dc-1'
+  tags:
+  - status
+
+- include: validation/opdk-setup-log-files.yml
+  tags:
+  - logs

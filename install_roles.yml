@@ -23,3 +23,7 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap
   name: opdk-setup-bootstrap
 
+- src: https://github.com/carlosfrias/apigee-opdk-silent-installation-config
+  name: opdk-silent-installation-config
+
+

@@ -84,11 +84,11 @@ for inventory group names.
 
 ## Inventory File Conventions
 These roles depend on use of conventions in the inventory file. Specifically inventory file conventions are ansible 
-groups must be defined. These ansible groups are semantically linked to the documentation. The ansible groups used as 
-conventions correspond to the installation roles and server categorizations called out in the Apigee Private Cloud 
-Installation and Configuration Guide. It has been useful to use planet and region designations combined with the 
-documented installation role names to create categorization semantics that should be fairly intuitive once you read the 
-Apigee Private Cloud Installation and Configuration Guide. 
+groups names that are defined around Apigee semantics. These ansible groups are semantically linked to the documentation. 
+The ansible groups used as conventions correspond to the installation roles and server categorizations called out in 
+the Apigee Private Cloud Installation and Configuration Guide. It has been useful to use planet and region designations 
+combined with the documented installation role names to create categorization semantics that should be fairly intuitive 
+once you read the Apigee Private Cloud Installation and Configuration Guide. 
 
 ## Inventory Planet and Installation Role Conventions 
 A planet refers to all server nodes across all data centers. These semantics are held via the use of group names for  
@@ -155,7 +155,7 @@ to provide a semantic model as follows:
     [dc-1-pgmaster]
     # Listing of the single Postgres master node in dc-1
     
-    [dc-1-pgstanby]
+    [dc-1-pgstandby]
     # Listing of the single Postgres standby node in dc-1
     
     [dc-1-ui]

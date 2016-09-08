@@ -16,3 +16,10 @@
 
 - src: https://github.com/carlosfrias/apigee-opdk-time-sync
   name: opdk-time-sync
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-openjdk
+  name: opdk-setup-openjdk
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap
+  name: opdk-setup-bootstrap
+

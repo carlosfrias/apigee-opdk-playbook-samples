@@ -1,3 +1,0 @@
----
-#public_ip_field_name: 'ec2_ip_address'
-#private_ip_field_name: 'ec2_private_ip_address'

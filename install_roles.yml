@@ -26,4 +26,14 @@
 - src: https://github.com/carlosfrias/apigee-opdk-silent-installation-config
   name: opdk-silent-installation-config
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-component
+  name: opdk-setup-component
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-component-installer
+  name: opdk-setup-component-installer
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-selinux-disable
+  name: opdk-setup-selinux-disable
+
+- src: https://github.com/carlosfrias/apigee-opdk-shutdown-iptables
+  name: opdk-shutdown-iptables

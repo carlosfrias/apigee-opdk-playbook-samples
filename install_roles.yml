@@ -5,6 +5,9 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-os-common
   name: opdk-setup-os-common
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-ds
+  name: opdk-setup-os-ds
+
 - src: https://github.com/carlosfrias/apigee-opdk-setup-os-minimum
   name: opdk-setup-os-minimum
 

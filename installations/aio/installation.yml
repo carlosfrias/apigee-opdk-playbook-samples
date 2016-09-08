@@ -16,29 +16,12 @@
   - setup:
 
 
-
-- include: facts.yml
-
-- include: update-root-user.yml
+- include: configuration/update-user.yml
   vars:
     hosts: planet
+    user: root
+    delay_before_check: 5
 
-- include: opdk-setup-os.yml
-  tags:
-  - os
-  - common
-
-- hosts: dc-1
-  strategy: free
-  roles:
-  - opdk-setup-openjdk
-  tags:
-  - openjdk
-  - common
-
-- include: opdk-setup-bootstrap.yml
-
-- include: opdk-setup-installer.yml
 
 - include: components/opdk-install-component.yml
   vars:
@@ -47,11 +30,20 @@
   tags:
   - aio
 
-- include: opdk-setup-org.yml
 
-- include: opdk-setup-validate.yml
+- include: configuration/opdk-setup-org-config.yml
 
-- include: opdk-setup-validate-cleanup.yml
+
+- include: configuration/opdk-setup-org.yml
+
+
+- include: validations/opdk-setup-validate.yml
+
+
+- include: validations/opdk-setup-log-files.yml
+  tags:
+  - logs
+
 
 - hosts: dc-1
   strategy: free

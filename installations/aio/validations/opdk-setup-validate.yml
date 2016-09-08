@@ -1,0 +1,15 @@
+---
+- hosts: rmp
+  serial: 1
+  roles:
+  - opdk-setup-validate
+  tags:
+  - validate
+
+- hosts: rmp
+  serial: 1
+  roles:
+  - opdk-setup-validate-cleanup
+  tags:
+  - validate
+  - validate-cleanup

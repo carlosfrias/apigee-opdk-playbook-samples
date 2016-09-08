@@ -52,3 +52,6 @@
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-apigee-log-files
   name: opdk-setup-apigee-log-files
+
+- src: https://github.com/carlosfrias/apigee-fetch-files
+  name: fetch-files

@@ -1,0 +1,2 @@
+export CONTINUE_ON_WARNING=y
+export JAVA_HOME=/usr/lib/jvm/java-openjdk

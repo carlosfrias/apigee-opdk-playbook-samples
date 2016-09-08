@@ -1,0 +1,15 @@
+---
+- src: https://github.com/carlosfrias/apigee-opdk-setup-apigee-user
+  name: opdk-setup-apigee-user
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-common
+  name: opdk-setup-os-common
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-minimum
+  name: opdk-setup-os-minimum
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-default-settings
+  name: opdk-setup-default-settings
+
+- src: https://github.com/carlosfrias/apigee-opdk-time-sync
+  name: opdk-time-sync

@@ -22,7 +22,6 @@ functionality provided by these roles:
  * Check that ports are accessible and available prior to installing any component.
  * Check that all expected ports are in use post-installation.
 
-
 Requirements
 ============
 
@@ -32,8 +31,8 @@ Requirements
 * Ansible 2.1  
 * Understanding of how to use Ansible
 
-Introduction
-============
+Folder Structure
+================
 
 Two folders are provided to help you setup your workspace. The folders are named environments and installations.
  
@@ -212,4 +211,3 @@ These roles will update the silent installation configuration file correctly for
   
      zk_observer=true
  
-

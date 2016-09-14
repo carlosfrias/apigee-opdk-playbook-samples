@@ -10,7 +10,7 @@ company_env: '{{ secure_company_env }}'
 owner_contact_info: '{{ secure_owner_contact_info }}'
 team_contact_info: '{{ secure_team_contact_info }}'
 env: '{{ name_prefix }}-{{ env_name }}'
-aws_access_key: '{{ aws_access_key_id }]'
+aws_access_key: '{{ aws_access_key_id }}'
 aws_secret_key: '{{ aws_secret_access_key }}'
 aws_region: '{{ secure_aws_region }}'
 volume_type: gp2

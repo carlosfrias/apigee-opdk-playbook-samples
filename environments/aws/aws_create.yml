@@ -1,5 +1,4 @@
 ---
-
 - hosts: localhost
   connection: local
 
@@ -18,5 +17,4 @@
     include_vars: "profiles/{{ provision_profile }}.yml"
 
   roles:
-  - opdk-setup-default-settings
   - aws-create

@@ -1,6 +1,0 @@
----
-- hosts: '{{ hosts }}'
-  roles:
-  - opdk-setup-status
-  tags:
-  - status

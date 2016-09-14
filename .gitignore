@@ -110,3 +110,4 @@ out
 .idea
 *iml
 *retry
+installations/aio/installation-logs-configs/*

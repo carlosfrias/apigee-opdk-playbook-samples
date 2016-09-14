@@ -10,7 +10,8 @@
       force: yes
     with_items:
     - '~/.ansible/tmp/cache'
-    - 'ansible.log'
+    - '~/.ansible/tmp/ansible.log'
     - 'ssh_keys'
     - 'configs_and_logs'
     - 'rpm_resources'
+

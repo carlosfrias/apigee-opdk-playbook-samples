@@ -149,7 +149,7 @@ file group names for planet level semantics are listed as follows:
     
     [ldap]
     # Listing of all the OpenLDAP nodes
-    
+
     [rmp]
     # Listing of all the Router and Message Processor nodes
      
@@ -174,6 +174,10 @@ have been referenced as data centers. The internal configurations of OPDK and Ba
 and so forth. Following this historical precedent we also define the regions with their corresponding installation role
 to provide a semantic model as follows:
  
+    # Listing that references all data centers that compose a planet. 
+    [planet:children]
+    dc-1
+
     [dc-1]
     # Listing of all nodes in data center 1 (dc-1)
     
@@ -210,4 +214,3 @@ These roles will update the silent installation configuration file correctly for
  variable zk_observer.
   
      zk_observer=true
- 

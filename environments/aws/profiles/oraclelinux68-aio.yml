@@ -4,8 +4,8 @@ image_id: ami-755ba918
 instance_type: 't2.medium'
 wait: yes
 assign_public_ip: yes
-session_name: 1601-edge-ol68-1
+session_name: 1601-edge-ol68-aio
 application: edge
 pod: NA
 start: 1
-end: 9
+end: 1

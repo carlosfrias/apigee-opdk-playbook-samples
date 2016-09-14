@@ -14,36 +14,59 @@
     stat:
       path: '{{ resize_hd }}'
     register: exists
+    tags:
+    - clean
 
   - name: Remove existing resize hd
     ignore_errors: yes
     shell: "{{ vbox_manage }} closemedium {{ resize_hd }}"
     register: exists.stat.exists
+    tags:
+    - clean
 
   - name: Remove existing resize hd file if it still remains
     file:
       path: '{{ resize_hd }}'
       state: absent
     register: exists.stat.exists
+    tags:
+    - clean
 
   - name: Clone and reformat hd
     shell: "{{ vbox_manage }} clonehd {{ original_hd }} {{ resize_hd }} --format VDI"
+    tags:
+    - clone
 
   - name: Resize hd
     shell: "{{ vbox_manage }} modifyhd {{ resize_hd }} --resize {{ size }}"
+    tags:
+    - resize
 
-  - name: Clone the resized and reformat hd to swap
+  - name: Reformat resized hd for swap
     shell: "{{ vbox_manage }} clonehd {{ original_hd }} {{ swap_hd }} --format VMDK"
+    tags:
+    - format
 
-  - name: Remove original_hd
-    shell: "{{ vbox_manage }} closemedium {{ original_hd }}"
+  - name: Removed interim resize
+    shell: "{{ vbox_manage }} closemedium {{ resize_hd }}"
+    tags:
+    - remove
 
-#  - name: Rename swap file to original
-#    copy:
-#      src: '{{ swap_hd }}'
-#      dest: '{{ original_hd }}'
-#      force: yes
+#  - name: Remove original_hd
+#    shell: "{{ vbox_manage }} closemedium {{ original_hd }}"
+#    tags:
+#    - remove
+
+  - name: Rename swap file to original
+    copy:
+      src: '{{ swap_hd }}'
+      dest: '{{ original_hd }}'
+      force: yes
+    tags:
+    - rename
 
 #  - name: Attached resized hd to vm
-#    shell: "{{ vbox_manage }} modifyvm aio_node --hda {{ original_hd }}"
+#    shell: "{{ vbox_manage }} modifyvm {{ vm_id }} --hda {{ original_hd }}"
+#    tags:
+#    - attach
 

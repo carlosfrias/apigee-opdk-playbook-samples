@@ -77,4 +77,8 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-rollback
   name: opdk-setup-bootstrap-rollback
 
+- src: https://github.com/carlosfrias/apigee-opdk-cassandra-rebuild
+  name: opdk-cassandra-rebuild
 
+- src: https://github.com/carlosfrias/apigee-opdk-cassandra-client-update
+  name: opdk-cassandra-client-update

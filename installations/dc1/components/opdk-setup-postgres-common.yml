@@ -2,7 +2,7 @@
 - hosts: '{{ hosts }}'
   strategy: free
   roles:
-  - opdk-setup-os-postgres
+  - opdk-setup-apigee-user
   - opdk-setup-postgres-config
   tags:
   - os-pg

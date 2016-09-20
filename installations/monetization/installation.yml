@@ -1,0 +1,35 @@
+---
+- include: configuration/opdk-setup-os.yml
+  vars:
+    hosts: 'planet'
+
+- include: configuration/update-user.yml
+  vars:
+    hosts: 'planet'
+    user: 'root'
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-ms'
+    component_profile: 'mo'
+    opdk_monetization: true
+  tags:
+  - mo-ms
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    component_profile: 'mo'
+    opdk_monetization: true
+  tags:
+  - mo-rmp
+
+- include: validations/opdk-setup-status.yml
+  vars:
+    hosts: 'dc-1'
+  tags:
+  - status
+
+- include: validations/opdk-setup-log-files.yml
+  tags:
+  - logs

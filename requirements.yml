@@ -74,4 +74,7 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-status
   name: opdk-setup-status
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-rollback
+  name: opdk-setup-bootstrap-rollback
+
 

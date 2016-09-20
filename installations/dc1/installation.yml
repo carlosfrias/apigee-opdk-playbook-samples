@@ -36,15 +36,17 @@
   tags:
   - qpid
 
-- include: components/opdk-setup-postgres-master.yml
+- include: components/opdk-setup-postgres-common.yml
   vars:
     hosts: 'dc-1-pgmaster'
+    pg_component: 'master'
   tags:
   - pgmaster
 
-- include: components/opdk-setup-postgres-standby.yml
+- include: components/opdk-setup-postgres-common.yml
   vars:
     hosts: 'dc-1-pgstandby'
+    pg_component: 'standby'
   tags:
   - pgstandby
 

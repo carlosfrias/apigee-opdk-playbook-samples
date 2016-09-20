@@ -59,3 +59,13 @@
 - src: https://github.com/carlosfrias/apigee-opdk-enable-swap
   name: opdk-enable-swap
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-config
+  name: opdk-setup-postgres-config
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-master
+  name: opdk-setup-postgres-master
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-standby
+  name: opdk-setup-postgres-standby
+
+

@@ -1,0 +1,21 @@
+---
+- hosts: '{{ hosts }}'
+  connection: local
+  strategy: free
+
+  vars_files:
+  - ~/.apigee/credentials.yml
+
+  pre_tasks:
+
+  - name: "Load default provisioning settings"
+    include_vars: aws-create-default-settings.yml
+
+  - setup:
+
+  - ec2_facts:
+
+  roles:
+  - aws-terminate
+
+

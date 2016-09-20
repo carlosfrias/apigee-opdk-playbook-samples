@@ -1,6 +1,6 @@
 ---
 - hosts: '{{ hosts }}'
-  strategy: free
+#  strategy: free
   roles:
   - opdk-setup-selinux-disable
   - opdk-shutdown-iptables

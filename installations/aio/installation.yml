@@ -7,13 +7,17 @@
     include_vars: '~/.apigee/credentials.yml'
   roles:
   - opdk-setup-os-minimum
+  - opdk-enable-swap
 #  - opdk-setup-default-settings
+
+  tasks:
+#  - name: Enable swap
+#    shell: dd if=/dev/zero of=/var/swap bs=1M count=4096; mkswap /var/swap; swapon /var/swap
 
 - include: configuration/update-user.yml
   vars:
     hosts: planet
     user: root
-    delay_before_check: 5
 
 - include: components/opdk-install-component.yml
   vars:
@@ -39,6 +43,7 @@
 - hosts: dc-1
   strategy: free
   roles:
+  - opdk-setup-default-settings
   - opdk-setup-apigee-log-files
   tags:
   - logs

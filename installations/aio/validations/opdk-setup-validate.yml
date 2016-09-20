@@ -2,6 +2,7 @@
 - hosts: rmp
   serial: 1
   roles:
+  - opdk-setup-default-settings
   - opdk-setup-validate
   tags:
   - validate

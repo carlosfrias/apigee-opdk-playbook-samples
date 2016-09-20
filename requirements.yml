@@ -55,3 +55,7 @@
 
 - src: https://github.com/carlosfrias/apigee-fetch-files
   name: fetch-files
+
+- src: https://github.com/carlosfrias/apigee-opdk-enable-swap
+  name: opdk-enable-swap
+

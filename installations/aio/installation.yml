@@ -8,12 +8,8 @@
   roles:
   - opdk-setup-os-minimum
   - opdk-enable-swap
-#  - opdk-setup-default-settings
 
   tasks:
-#  - name: Enable swap
-#    shell: dd if=/dev/zero of=/var/swap bs=1M count=4096; mkswap /var/swap; swapon /var/swap
-
 - include: configuration/update-user.yml
   vars:
     hosts: planet

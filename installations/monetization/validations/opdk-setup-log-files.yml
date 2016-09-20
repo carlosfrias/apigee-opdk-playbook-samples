@@ -1,0 +1,25 @@
+---
+- hosts: planet
+  strategy: free
+  roles:
+  - { role: fetch-files, fetch_files: '{{ apigee_log_files }}' }
+  tags:
+  - logs
+  - apigee-logs
+
+- hosts: planet
+  become: true
+  strategy: free
+  roles:
+  - { role: fetch-files, fetch_files: '{{ system_config_files }}' }
+  tags:
+  - logs
+  - os-logs
+
+- hosts: planet
+  strategy: free
+  roles:
+  - { role: fetch-files, fetch_files: '{{ apigee_config_files }}' }
+  tags:
+  - logs
+  - config-logs

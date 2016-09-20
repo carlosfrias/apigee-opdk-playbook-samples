@@ -15,15 +15,8 @@
   tags:
   - pg
 
-- include: 'opdk-setup-postgres-{{ pg_component}}.yml'
+- include: 'opdk-setup-postgres-{{ pg_component }}.yml'
   when: pg_component is defined
-
-- hosts: '{{ hosts }}'
-  serial: 1
-  roles:
-  - opdk-setup-postgres-master
-  tags:
-  - pgmaster
 
 - hosts: '{{ hosts }}'
   serial: 1

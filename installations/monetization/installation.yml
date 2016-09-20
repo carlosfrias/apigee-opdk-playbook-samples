@@ -19,10 +19,6 @@
 - include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-1-rmp'
-    component_profile: 'mo'
-    opdk_monetization: true
-  tags:
-  - mo-rmp
 
 - include: validations/opdk-setup-status.yml
   vars:

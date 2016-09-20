@@ -12,7 +12,6 @@
   vars:
     hosts: 'dc-1-ds'
     component_profile: 'ds'
-    jdk_version: '1.8'
   tags:
   - ds
 
@@ -20,7 +19,6 @@
   vars:
     hosts: 'dc-1-ms'
     component_profile: 'ms'
-    jdk_version: '1.8'
   tags:
   - ms
 
@@ -28,7 +26,6 @@
   vars:
     hosts: 'dc-1-rmp'
     component_profile: 'rmp'
-    jdk_version: '1.8'
   tags:
   - rmp
 
@@ -36,7 +33,6 @@
   vars:
     hosts: 'dc-1-qpid'
     component_profile: 'qs'
-    jdk_version: '1.8'
   tags:
   - qpid
 
@@ -44,7 +40,6 @@
   vars:
     hosts: 'dc-1-pgmaster'
     pg_component: 'master'
-    jdk_version: '1.8'
   tags:
   - pgmaster
 
@@ -52,7 +47,6 @@
   vars:
     hosts: 'dc-1-pgstandby'
     pg_component: 'standby'
-    jdk_version: '1.8'
   tags:
   - pgstandby
 

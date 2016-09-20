@@ -1,0 +1,29 @@
+---
+- hosts: '{{ hosts }}'
+  strategy: free
+  roles:
+  - opdk-setup-apigee-user
+  - opdk-setup-os-ds
+
+- hosts: '{{ hosts }}'
+  strategy: free
+  roles:
+  - opdk-setup-openjdk
+
+- hosts: '{{ hosts }}'
+  strategy: free
+  roles:
+  - opdk-setup-bootstrap
+
+- hosts: '{{ hosts }}'
+  strategy: free
+  roles:
+  - opdk-setup-silent-installation-config
+  - opdk-setup-component-installer
+
+- hosts: '{{ hosts }}'
+  serial: 1
+  roles:
+  - { role: opdk-setup-component, profile: '{{ component_profile }}' }
+
+

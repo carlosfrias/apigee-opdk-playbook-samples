@@ -68,4 +68,7 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-standby
   name: opdk-setup-postgres-standby
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-postgres
+  name: opdk-setup-os-postgres
+
 

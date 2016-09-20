@@ -71,4 +71,7 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-os-postgres
   name: opdk-setup-os-postgres
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-status
+  name: opdk-setup-status
+
 

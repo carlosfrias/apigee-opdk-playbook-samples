@@ -1,0 +1,43 @@
+---
+- hosts: '{{ hosts }}'
+  strategy: free
+#  pre_tasks:
+#  - setup:
+#  - ec2_facts:
+  roles:
+  - opdk-time-sync
+  - opdk-setup-os-minimum
+  - opdk-setup-os-common
+  - opdk-setup-apigee-user
+  - opdk-setup-os-postgres
+  - opdk-setup-openjdk
+  - opdk-setup-bootstrap
+  - opdk-setup-silent-installation-config
+  - opdk-setup-component-installer
+  tags:
+  - os-pg
+  - os
+
+- hosts: '{{ hosts }}'
+  serial: 1
+  roles:
+  - opdk-setup-postgres
+  - opdk-setup-postgres-standby
+  tags:
+  - pg
+  - pgstandby
+
+- hosts: '{{ hosts }}'
+  serial: 1
+  roles:
+  - opdk-setup-default-settings
+  tasks:
+  - name: Obtain server self report
+    opdk_server_self:
+      server_type: 'ps'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+    ignore_errors: yes
+  tags:
+  - pg
+  - pgstandby

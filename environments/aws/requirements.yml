@@ -1,0 +1,7 @@
+---
+- src: https://github.com/carlosfrias/apigee-opdk-aws-create
+  name: aws-create
+
+- src: https://github.com/carlosfrias/apigee-opdk-aws-terminate
+  name: aws-terminate
+

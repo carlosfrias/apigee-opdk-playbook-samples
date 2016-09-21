@@ -1,0 +1,75 @@
+---
+- src: https://github.com/carlosfrias/apigee-opdk-setup-apigee-user
+  name: opdk-setup-apigee-user
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-common
+  name: opdk-setup-os-common
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-ds
+  name: opdk-setup-os-ds
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-minimum
+  name: opdk-setup-os-minimum
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-default-settings
+  name: opdk-setup-default-settings
+
+- src: https://github.com/carlosfrias/apigee-opdk-time-sync
+  name: opdk-time-sync
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-openjdk
+  name: opdk-setup-openjdk
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap
+  name: opdk-setup-bootstrap
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-silent-installation-config
+  name: opdk-setup-silent-installation-config
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-component
+  name: opdk-setup-component
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-component-installer
+  name: opdk-setup-component-installer
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-selinux-disable
+  name: opdk-setup-selinux-disable
+
+- src: https://github.com/carlosfrias/apigee-opdk-shutdown-iptables
+  name: opdk-shutdown-iptables
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-org-config
+  name: opdk-setup-org-config
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-org
+  name: opdk-setup-org
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-validate
+  name: opdk-setup-validate
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-validate-cleanup
+  name: opdk-setup-validate-cleanup
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-apigee-log-files
+  name: opdk-setup-apigee-log-files
+
+- src: https://github.com/carlosfrias/apigee-fetch-files
+  name: fetch-files
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-config
+  name: opdk-setup-postgres-config
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-master
+  name: opdk-setup-postgres-master
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-standby
+  name: opdk-setup-postgres-standby
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-postgres
+  name: opdk-setup-os-postgres
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-status
+  name: opdk-setup-status
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-rollback
+  name: opdk-setup-bootstrap-rollback

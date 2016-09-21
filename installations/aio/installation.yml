@@ -1,4 +1,13 @@
 ---
+- hosts: 'planet'
+  tasks:
+  - name: Update cache with basic node info
+    setup:
+
+  - name: Update cache with AWS info, if running on aws
+    ec2_facts:
+    when: ansible_bios_version is defined and ansible_bios_version | lower | search('amazon')
+
 - include: configuration/opdk-setup-os.yml
   vars:
     hosts: 'planet'

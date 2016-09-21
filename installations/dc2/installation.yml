@@ -1,12 +1,4 @@
 ---
-#- hosts: 'planet'
-#  become: yes
-#  gather_facts: no
-#  strategy: free
-#  tasks:
-#  - name: Load credentials from encrypted file
-#    include_vars: '~/.apigee/credentials.yml'
-
 - include: configuration/opdk-setup-os.yml
   vars:
     hosts: 'planet'
@@ -20,6 +12,8 @@
   vars:
     hosts: 'dc-2-ds'
     component_profile: 'ds'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - ds
 
@@ -27,28 +21,38 @@
   vars:
     hosts: 'dc-1-ds'
     component_profile: 'ds'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - ds
 
 - include: components/opdk-cassandra-client-update.yml
   vars:
      hosts: 'dc-1-ms'
+     jdk_version: '1.8'
 
 - include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-1-ms'
     component_profile: 'ms'
+    opdk_ldap_type: '2'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - ms
 
 - include: components/opdk-cassandra-rebuild.yml
   vars:
     hosts: 'dc-2-ds'
+    jdk_version: '1.8'
 
 - include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-2-ms'
     component_profile: 'ms'
+    opdk_ldap_type: '2'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - ms2
 
@@ -56,6 +60,8 @@
   vars:
     hosts: 'dc-2-rmp'
     component_profile: 'rmp'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - rmp
 
@@ -63,6 +69,8 @@
   vars:
     hosts: 'dc-1-rmp'
     component_profile: 'rmp'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - rmp
 
@@ -70,30 +78,53 @@
   vars:
     hosts: 'dc-2-qpid'
     component_profile: 'qs'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - qpid
 
-- include: components/opdk-setup-postgres-master.yml
+
+- include: components/opdk-setup-postgres-common.yml
   vars:
     hosts: 'dc-2-pgmaster'
+    pg_component: 'master'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - pgmaster
 
-- include: components/opdk-setup-postgres-standby.yml
+- include: components/opdk-setup-postgres-common.yml
   vars:
     hosts: 'dc-2-pgstandby'
+    pg_component: 'standby'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
   tags:
   - pgstandby
+
+#- include: components/opdk-setup-postgres-master.yml
+#  vars:
+#    hosts: 'dc-2-pgmaster'
+#  tags:
+#  - pgmaster
+#
+#- include: components/opdk-setup-postgres-standby.yml
+#  vars:
+#    hosts: 'dc-2-pgstandby'
+#  tags:
+#  - pgstandby
 
 - include: configuration/opdk-setup-org-config.yml
   vars:
     hosts: 'dc-2-ms'
+    opdk_ldap_type: '2'
   tags:
   - org-config
 
 - include: configuration/opdk-setup-org.yml
   vars:
     hosts: 'dc-2-ms'
+    opdk_ldap_type: '2'
   tags:
   - org
 

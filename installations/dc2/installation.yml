@@ -102,18 +102,6 @@
   tags:
   - pgstandby
 
-#- include: components/opdk-setup-postgres-master.yml
-#  vars:
-#    hosts: 'dc-2-pgmaster'
-#  tags:
-#  - pgmaster
-#
-#- include: components/opdk-setup-postgres-standby.yml
-#  vars:
-#    hosts: 'dc-2-pgstandby'
-#  tags:
-#  - pgstandby
-
 - include: configuration/opdk-setup-org-config.yml
   vars:
     hosts: 'dc-2-ms'

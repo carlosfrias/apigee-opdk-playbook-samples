@@ -1,12 +1,7 @@
 ---
 - hosts: '{{ hosts }}'
-#  strategy: free
+  strategy: free
   roles:
-  - opdk-setup-selinux-disable
-  - opdk-shutdown-iptables
-  - opdk-time-sync
-  - opdk-setup-os-minimum
-  - opdk-setup-os-common
   - opdk-setup-apigee-user
   - opdk-setup-os-ds
 

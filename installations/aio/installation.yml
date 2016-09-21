@@ -1,13 +1,7 @@
 ---
-- hosts: planet
-  become: yes
-  gather_facts: no
-  pre_tasks:
-  - name: Load credentials from encrypted file
-    include_vars: '~/.apigee/credentials.yml'
-  roles:
-  - opdk-setup-os-minimum
-  - opdk-enable-swap
+- include: configuration/opdk-setup-os.yml
+  vars:
+    hosts: 'planet'
 
   tasks:
 - include: configuration/update-user.yml

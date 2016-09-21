@@ -1,95 +1,112 @@
 ---
-- include: component_installations/opdk-install-component.yml
+#- hosts: 'planet'
+#  become: yes
+#  gather_facts: no
+#  strategy: free
+#  tasks:
+#  - name: Load credentials from encrypted file
+#    include_vars: '~/.apigee/credentials.yml'
+
+- include: configuration/opdk-setup-os.yml
+  vars:
+    hosts: 'planet'
+
+- include: configuration/update-user.yml
+  vars:
+    hosts: 'planet'
+    user: 'root'
+
+- include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-2-ds'
     component_profile: 'ds'
   tags:
   - ds
 
-- include: component_installations/opdk-install-component.yml
+- include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-1-ds'
     component_profile: 'ds'
   tags:
   - ds
 
-- include: component_updates/opdk-cassandra-client-update.yml
+- include: components/opdk-cassandra-client-update.yml
   vars:
      hosts: 'dc-1-ms'
 
-- include: component_installations/opdk-install-component.yml
+- include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-1-ms'
     component_profile: 'ms'
   tags:
   - ms
 
-- include: component_installations/opdk-cassandra-rebuild.yml
+- include: components/opdk-cassandra-rebuild.yml
   vars:
     hosts: 'dc-2-ds'
 
-- include: component_installations/opdk-install-component.yml
+- include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-2-ms'
     component_profile: 'ms'
   tags:
   - ms2
 
-- include: component_installations/opdk-install-component.yml
+- include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-2-rmp'
     component_profile: 'rmp'
   tags:
   - rmp
 
-- include: component_installations/opdk-install-component.yml
+- include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-1-rmp'
     component_profile: 'rmp'
   tags:
   - rmp
 
-- include: component_installations/opdk-install-component.yml
+- include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-2-qpid'
     component_profile: 'qs'
   tags:
   - qpid
 
-- include: component_installations/opdk-setup-postgres-master.yml
+- include: components/opdk-setup-postgres-master.yml
   vars:
     hosts: 'dc-2-pgmaster'
   tags:
   - pgmaster
 
-- include: component_installations/opdk-setup-postgres-standby.yml
+- include: components/opdk-setup-postgres-standby.yml
   vars:
     hosts: 'dc-2-pgstandby'
   tags:
   - pgstandby
 
-- include: validation/opdk-setup-org-config.yml
+- include: configuration/opdk-setup-org-config.yml
   vars:
     hosts: 'dc-2-ms'
   tags:
   - org-config
 
-- include: validation/opdk-setup-org.yml
+- include: configuration/opdk-setup-org.yml
   vars:
     hosts: 'dc-2-ms'
   tags:
   - org
 
-- include: validation/opdk-setup-validate.yml
+- include: validations/opdk-setup-validate.yml
   tags:
   - validate
 
-- include: validation/opdk-setup-status.yml
+- include: validations/opdk-setup-status.yml
   vars:
     hosts: 'planet'
   tags:
   - status
 
-- include: validation/opdk-setup-log-files.yml
+- include: validations/opdk-setup-log-files.yml
   tags:
   - logs

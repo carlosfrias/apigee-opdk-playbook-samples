@@ -1,4 +1,21 @@
 ---
+- hosts: ms
+  serial: 1
+  roles:
+  - opdk-setup-default-settings
+  tasks:
+  - name: Obtain management server self report
+    ignore_errors: yes
+    opdk_server_self:
+      server_type: 'ms'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - name: Report management server self
+    debug:
+      var: edge_ms_self
+    when: edge_ms_self is defined
+
 - hosts: rmp
   serial: 1
   roles:
@@ -10,7 +27,11 @@
       server_type: 'router'
       username: '{{ opdk_user_email }}'
       password: '{{ opdk_user_pass }}'
-  - debug: var="edge_router_self"
+
+  - name: Router self report
+    debug:
+      var: edge_router_self
+    when: edge_router_self is defined
 
   - name: Obtain message processor server self report
     ignore_errors: yes
@@ -19,23 +40,10 @@
       username: '{{ opdk_user_email }}'
       password: '{{ opdk_user_pass }}'
 
-  - debug: var="edge_mp_self"
-
-
-- hosts: pg
-  serial: 1
-  roles:
-  - opdk-setup-default-settings
-  tasks:
-  - name: Obtain postgres server self report
-    ignore_errors: yes
-    opdk_server_self:
-      server_type: 'ps'
-      username: '{{ opdk_user_email }}'
-      password: '{{ opdk_user_pass }}'
-
-  - debug: var="edge_ps_self"
-
+  - name: Message processor self report
+    debug:
+      var: edge_mp_self
+    when: edge_mp_self is defined
 
 - hosts: qpid
   serial: 1
@@ -49,20 +57,24 @@
       username: '{{ opdk_user_email }}'
       password: '{{ opdk_user_pass }}'
 
-  - debug: var="edge_qs_self"
+  - name: Qpid server self report
+    debug:
+      var: edge_qs_self
+    when: edge_qs_self is defined
 
-
-- hosts: ms
+- hosts: pg
   serial: 1
   roles:
   - opdk-setup-default-settings
   tasks:
-  - name: Obtain management server self report
+  - name: Obtain postgres server self report
     ignore_errors: yes
     opdk_server_self:
-      server_type: 'ms'
+      server_type: 'ps'
       username: '{{ opdk_user_email }}'
       password: '{{ opdk_user_pass }}'
 
-  - debug: var="edge_ms_self"
-
+  - name: Postgres server self report
+    debug:
+      var: edge_ps_self
+    when: edge_ps_self is defined

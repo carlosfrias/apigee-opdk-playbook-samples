@@ -1,0 +1,9 @@
+---
+- hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
+  vars:
+    opdk_monetization: true
+  roles:
+  - opdk-setup-silent-installation-config
+

@@ -1,4 +1,8 @@
 ---
+- include: configuration/opdk-credentials.yml
+  vars:
+    hosts: 'planet'
+
 - hosts: 'planet'
   tasks:
   - name: Update cache with basic node info

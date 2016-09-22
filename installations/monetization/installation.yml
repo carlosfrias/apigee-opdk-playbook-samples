@@ -1,12 +1,7 @@
 ---
-- include: configuration/opdk-setup-os.yml
+- include: configuration/opdk-credentials.yml
   vars:
-    hosts: 'planet'
-
-- include: configuration/update-user.yml
-  vars:
-    hosts: 'planet'
-    user: 'root'
+    hosts: 'dc-1-ms'
 
 - include: components/opdk-install-component.yml
   vars:
@@ -19,6 +14,8 @@
 - include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-1-rmp'
+    component_profile: 'mo'
+    opdk_monetization: true
 
 - include: validations/opdk-setup-status.yml
   vars:

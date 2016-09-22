@@ -1,11 +1,13 @@
 ---
 - include: configuration/opdk-setup-os.yml
   vars:
-    hosts: 'planet'
+    hosts: 'dc-1'
+  tags:
+  - os
 
 - include: configuration/update-user.yml
   vars:
-    hosts: 'planet'
+    hosts: 'dc-1'
     user: 'root'
 
 - include: components/opdk-install-component.yml
@@ -69,6 +71,8 @@
   - org
 
 - include: validations/opdk-setup-validate.yml
+  vars:
+    hosts: 'dc-1-rmp'
   tags:
   - validate
 

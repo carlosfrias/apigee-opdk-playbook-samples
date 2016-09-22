@@ -1,14 +1,16 @@
 ---
-- hosts: rmp
+- hosts: '{{ hosts }}'
   serial: 1
   roles:
+  - opdk-setup-default-settings
   - opdk-setup-validate
   tags:
   - validate
 
-- hosts: rmp
+- hosts: '{{ hosts }}'
   serial: 1
   roles:
+  - opdk-setup-default-settings
   - opdk-setup-validate-cleanup
   tags:
   - validate

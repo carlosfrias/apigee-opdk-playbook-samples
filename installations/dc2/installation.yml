@@ -35,7 +35,6 @@
   vars:
     hosts: 'dc-1-ms'
     component_profile: 'ms'
-    opdk_ldap_type: '2'
     jdk_version: '1.8'
     opdk_ldap_type: '2'
   tags:
@@ -50,7 +49,6 @@
   vars:
     hosts: 'dc-2-ms'
     component_profile: 'ms'
-    opdk_ldap_type: '2'
     jdk_version: '1.8'
     opdk_ldap_type: '2'
   tags:
@@ -82,7 +80,6 @@
     opdk_ldap_type: '2'
   tags:
   - qpid
-
 
 - include: components/opdk-setup-postgres-common.yml
   vars:

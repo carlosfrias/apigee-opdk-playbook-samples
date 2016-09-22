@@ -5,4 +5,4 @@
   tags:
   - status
 
-- include: opdk-server-self.ymls
+- include: opdk-server-self.yml

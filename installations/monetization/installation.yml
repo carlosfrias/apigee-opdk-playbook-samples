@@ -1,25 +1,29 @@
 ---
 - include: configuration/opdk-credentials.yml
   vars:
-    hosts: 'dc-1-ms'
+    hosts: 'ms,rmp'
 
 - include: components/opdk-install-component.yml
   vars:
-    hosts: 'dc-1-ms'
+    hosts: 'ms,rmp'
     component_profile: 'mo'
     opdk_monetization: true
   tags:
   - mo-ms
 
-- include: components/opdk-install-component.yml
+#- include: components/opdk-install-component.yml
+#  vars:
+#    hosts: 'rmp'
+#    component_profile: 'mo'
+#    opdk_monetization: true
+
+- include: components/opdk-provision-component.yml
   vars:
-    hosts: 'dc-1-rmp'
-    component_profile: 'mo'
-    opdk_monetization: true
+    hosts: 'ms,rmp'
 
 - include: validations/opdk-setup-status.yml
   vars:
-    hosts: 'dc-1'
+    hosts: 'ms,rmp'
   tags:
   - status
 

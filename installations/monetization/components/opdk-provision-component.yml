@@ -1,0 +1,6 @@
+---
+
+- hosts: '{{ hosts }}'
+  serial: 1
+  roles:
+  - { role: opdk-setup-provisioning, provisioning_action: 'enable-monetization', provisioning_config_file: '{{ opdk_installation_config_file }}'}

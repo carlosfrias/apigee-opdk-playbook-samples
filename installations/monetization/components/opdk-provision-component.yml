@@ -1,5 +1,4 @@
 ---
-
 - hosts: '{{ hosts }}'
   serial: 1
   roles:

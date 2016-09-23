@@ -11,12 +11,6 @@
   tags:
   - mo-ms
 
-#- include: components/opdk-install-component.yml
-#  vars:
-#    hosts: 'rmp'
-#    component_profile: 'mo'
-#    opdk_monetization: true
-
 - include: components/opdk-provision-component.yml
   vars:
     hosts: 'ms,rmp'

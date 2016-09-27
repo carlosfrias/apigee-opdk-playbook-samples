@@ -23,5 +23,74 @@
 
 - hosts: '{{ hosts }}'
   serial: 1
+  pre_tasks:
+  - name: Obtain router server self report
+    ignore_errors: yes
+    opdk_server_self:
+      server_type: 'router'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - name: Obtain router server self report
+    ignore_errors: yes
+    opdk_server_self:
+      server_type: 'mp'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - name: Set uuid if router
+    set_fact:
+      uuid: '{{ edge_router_self.uUID }}'
+    when: edge_router_self is defined
+
+  - name: Set uuid if message processor
+    set_fact:
+      uuid: '{{ edge_mp_self.uUID }}'
+    when: edge_mp_self is defined
+
+  - name: Setting reachability to false
+    ignore_errors: yes
+    uri:
+      user: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+      method: POST
+      url: http://{{ local_mgmt_ip }}:{{ ms_ext_mgmt_port }}/v1/servers/{{ uuid }}
+      body: reachable=false
+    when: uuid is defined
+
   roles:
   - { role: opdk-setup-component, profile: '{{ component_profile }}' }
+
+  tasks:
+  - name: Obtain router server self report
+    ignore_errors: yes
+    opdk_server_self:
+      server_type: 'router'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - name: Obtain router server self report
+    ignore_errors: yes
+    opdk_server_self:
+      server_type: 'mp'
+      username: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+
+  - name: Set uuid if router
+    set_fact:
+      uuid: '{{ edge_router_self.uUID }}'
+    when: edge_router_self is defined
+
+  - name: Set uuid if message processor
+    set_fact:
+      uuid: '{{ edge_mp_self.uUID }}'
+    when: edge_mp_self is defined
+
+  - name: Setting reachability to true
+    ignore_errors: yes
+    uri:
+      user: '{{ opdk_user_email }}'
+      password: '{{ opdk_user_pass }}'
+      method: POST
+      url: http://{{ local_mgmt_ip }}:{{ ms_ext_mgmt_port }}/v1/servers/{{ uuid }}
+      body: reachable=true

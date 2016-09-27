@@ -24,14 +24,14 @@
 - hosts: '{{ hosts }}'
   serial: 1
   pre_tasks:
-  - name: Obtain router server self report
+  - name: Check for router server self report
     ignore_errors: yes
     opdk_server_self:
       server_type: 'router'
       username: '{{ opdk_user_email }}'
       password: '{{ opdk_user_pass }}'
 
-  - name: Obtain router server self report
+  - name: Check for message processor server self report
     ignore_errors: yes
     opdk_server_self:
       server_type: 'mp'
@@ -48,7 +48,7 @@
       uuid: '{{ edge_mp_self.uUID }}'
     when: edge_mp_self is defined
 
-  - name: Setting reachability to false
+  - name: Set reachability to false if set
     ignore_errors: yes
     uri:
       user: '{{ opdk_user_email }}'
@@ -62,14 +62,14 @@
   - { role: opdk-setup-component, profile: '{{ component_profile }}' }
 
   tasks:
-  - name: Obtain router server self report
+  - name: Check for router server self report
     ignore_errors: yes
     opdk_server_self:
       server_type: 'router'
       username: '{{ opdk_user_email }}'
       password: '{{ opdk_user_pass }}'
 
-  - name: Obtain router server self report
+  - name: Check for message processor server self report
     ignore_errors: yes
     opdk_server_self:
       server_type: 'mp'
@@ -86,7 +86,7 @@
       uuid: '{{ edge_mp_self.uUID }}'
     when: edge_mp_self is defined
 
-  - name: Setting reachability to true
+  - name: Set reachability to true if changed
     ignore_errors: yes
     uri:
       user: '{{ opdk_user_email }}'
@@ -94,3 +94,4 @@
       method: POST
       url: http://{{ local_mgmt_ip }}:{{ ms_ext_mgmt_port }}/v1/servers/{{ uuid }}
       body: reachable=true
+    when: uuid is defined

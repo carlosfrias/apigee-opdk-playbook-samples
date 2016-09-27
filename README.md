@@ -132,54 +132,27 @@ The ansible groups used as conventions correspond to the installation roles and 
 the Apigee Private Cloud Installation and Configuration Guide. It has been useful to use planet and region designations 
 combined with the documented installation role names to create categorization semantics that should be fairly intuitive 
 once you read the Apigee Private Cloud Installation and Configuration Guide. 
-
-## Inventory Planet and Installation Role Conventions 
+   
+## Inventory Planet, Region and Installation Role Conventions
 A planet refers to all server nodes across all data centers. These semantics are held via the use of group names for  
 all nodes that fulfill a specific purpose. The installation roles provide the semantic model we followed. The inventory 
-file group names for planet level semantics are listed as follows: 
+file group names for planet level semantics are listed in the template inventory file below. 
 
-    [planet]
-    # Listing of all nodes
-    
-    [ds]
-    # Listing of all the Cassandra and Zookeeper nodes
-    
-    [ms]
-    # Listing of all the Management Server nodes
-    
-    [ldap]
-    # Listing of all the OpenLDAP nodes
-
-    [rmp]
-    # Listing of all the Router and Message Processor nodes
-     
-    [qpid]
-    # Listing of all Qpid nodes
-    
-    [pg]
-    # Listing of all Postgres nodes
-    
-    [pgmaster]
-    # Listing of the single Postgres master node
-    
-    [pgstandby]
-    # Listing of the single Postgres standby node
-    
-    [ui]
-    # Listing of all UI nodes
-    
-## Inventory Region and Installation Role Conventions
 A region represents subset of a planet. The semantics used for installation roles are congruent with a region. Region 
 have been referenced as data centers. The internal configurations of OPDK and BaaS support many regions as dc-1, dc-2 
 and so forth. Following this historical precedent we also define the regions with their corresponding installation role
 to provide a semantic model as follows:
  
     # Listing that references all data centers that compose a planet. 
-    [planet:children]
+    [planet]
     dc-1
 
     [dc-1]
     # Listing of all nodes in data center 1 (dc-1)
+    
+    [ds:children]
+    # Listing of all the Cassandra and Zookeeper nodes across the planet
+    dc-1-ds
     
     [dc-1-ds]
     # Listing of all the Cassandra and Zookeeper nodes in dc-1

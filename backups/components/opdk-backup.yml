@@ -3,17 +3,6 @@
   serial: 1
   roles:
   - opdk-setup-default-settings
-  - { role: opdk-backup, component_profile: '{{ component_profile }}' }
+  - { role: opdk-backup, component_profile: '{{ profile }}' }
 
-
-  tasks:
-  - name: Stop component
-    shell: '{{ apigee_service }} {{ component_profile }} stop'
-    when: component_profile != 'apigee-postgresql'
-
-  - name: Backup component
-    shell: '{{ apigee_service }} {{ component_profile }} backup'
-
-  - name: Stop component
-    shell: '{{ apigee_service }} {{ component_profile }} start'
 

@@ -5,8 +5,8 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-os-common
   name: opdk-setup-os-common
 
-- src: https://github.com/carlosfrias/apigee-opdk-setup-os-ds
-  name: opdk-setup-os-ds
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-limits
+  name: opdk-setup-os-limits
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-os-minimum
   name: opdk-setup-os-minimum
@@ -82,3 +82,30 @@
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-provisioning
   name: opdk-setup-provisioning
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-mp
+  name: internal-port-connectivity-validator-mp
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ldap
+  name: internal-port-connectivity-validator-ldap
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-cassandra
+  name: internal-port-connectivity-validator-cassandra
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-zookeeper
+  name: internal-port-connectivity-validator-zookeeper
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ms
+  name: internal-port-connectivity-validator-ms
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-postgres
+  name: internal-port-connectivity-validator-postgres
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-router
+  name: internal-port-connectivity-validator-router
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-qpid
+  name: internal-port-connectivity-validator-qpid
+
+- src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ui
+  name: internal-port-connectivity-validator-ui

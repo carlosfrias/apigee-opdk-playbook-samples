@@ -1,0 +1,16 @@
+---
+- hosts: '{{ hosts }}'
+  serial: 1
+  roles:
+  - opdk-setup-default-settings
+
+  tasks:
+  - name: Stop component
+    shell: '{{ apigee_service }} {{ component_profile }} stop'
+
+  - name: Backup component
+    shell: '{{ apigee_service }} {{ component_profile }} backup'
+
+  - name: Stop component
+    shell: '{{ apigee_service }} {{ component_profile }} start'
+

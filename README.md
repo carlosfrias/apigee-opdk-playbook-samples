@@ -48,18 +48,18 @@ Installing Ansible Roles
 ========================
 
 It is necessary to install the Ansible roles on your control server. This can be accomplished with the provided 
-install_roles.yml. Please use ansible-galaxy to download and install the roles: 
+requirements.yml. Please use ansible-galaxy to download and install the roles: 
 
-    ansible-galaxy install -r install_roles.yml
+    ansible-galaxy install -r requirements.yml
     
 Please note that you can obtain any updates by using -f (force): 
  
-     ansible-galaxy install -fr install_roles.yml
+     ansible-galaxy install -f -r requirements.yml
 
 Ansible Roles
 =============
 
-The following ansible roles will be installed with the install_roles.yml file:
+The following ansible roles will be installed with the requirements.yml file:
 
 * [opdk-setup-apigee-user](https://github.com/carlosfrias/apigee-opdk-setup-apigee-user)
 * [opdk-setup-os-common](https://github.com/carlosfrias/apigee-opdk-setup-os-common)

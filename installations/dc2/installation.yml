@@ -118,8 +118,14 @@
   - org
 
 - include: validations/opdk-setup-validate.yml
+  vars:
+    hosts: 'dc-2-rmp'
   tags:
   - validate
+
+- include: validations/opdk-internal-port-connectivity-validator.yml
+  tags:
+  - port-validator
 
 - include: validations/opdk-setup-status.yml
   vars:

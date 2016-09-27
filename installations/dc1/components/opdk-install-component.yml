@@ -3,7 +3,7 @@
   strategy: free
   roles:
   - opdk-setup-apigee-user
-  - opdk-setup-os-ds
+  - opdk-setup-os-limits
 
 - hosts: '{{ hosts }}'
   strategy: free

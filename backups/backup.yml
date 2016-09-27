@@ -1,0 +1,77 @@
+---
+- include: configuration/opdk-credentials.yml
+  vars:
+    hosts: 'planet'
+  tags:
+  - credentials
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'ds'
+    component_profile: 'apigee-zookeeper'
+  tags:
+  - zookeeper
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'ds'
+    component_profile: 'apigee-cassandra'
+  tags:
+  - cassandra
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'rmp'
+    component_profile: 'edge-router'
+  tags:
+  - router
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'rmp'
+    component_profile: 'edge-message-processor'
+  tags:
+  - mp
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'pg'
+    component_profile: 'edge-postgres-server'
+  tags:
+  - ps
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'qpid'
+    component_profile: 'edge-qpid-server'
+  tags:
+  - qs
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'qpid'
+    component_profile: 'apigee-qpidd'
+  tags:
+  - qpid
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'ldap'
+    component_profile: 'apigee-openldap'
+  tags:
+  - ldap
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'ms'
+    component_profile: 'edge-management-server'
+  tags:
+  - ms
+
+- include: components/opdk-backup.yml
+  vars:
+    hosts: 'ui'
+    component_profile: 'edge-ui'
+  tags:
+  - ui
+

@@ -5,14 +5,16 @@
 
 - include: configuration/opdk-setup-os.yml
   vars:
-    hosts: 'dc-1'
+    hosts: 'planet'
   tags:
   - os
 
 - include: configuration/update-user.yml
   vars:
-    hosts: 'dc-1'
+    hosts: 'planet'
     user: 'root'
+  tags:
+  - user
 
 - include: components/opdk-install-component.yml
   vars:
@@ -80,9 +82,13 @@
   tags:
   - validate
 
+- include: validations/opdk-internal-port-connectivity-validator.yml
+  tags:
+  - port-validator
+
 - include: validations/opdk-setup-status.yml
   vars:
-    hosts: 'dc-1'
+    hosts: 'planet'
   tags:
   - status
 

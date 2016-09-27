@@ -42,6 +42,13 @@
 
 - include: components/opdk-backup.yml
   vars:
+    hosts: 'pg'
+    component_profile: 'apigee-postgresql'
+  tags:
+  - pg
+
+- include: components/opdk-backup.yml
+  vars:
     hosts: 'qpid'
     component_profile: 'edge-qpid-server'
   tags:

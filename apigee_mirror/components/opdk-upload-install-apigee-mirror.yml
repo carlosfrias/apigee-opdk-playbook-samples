@@ -1,0 +1,16 @@
+---
+- hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - opdk-setup-bootstrap-upload-archive
+  tags:
+  - upload
+
+- hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - opdk-setup-bootstrap-archive-installer
+  tags:
+  - install

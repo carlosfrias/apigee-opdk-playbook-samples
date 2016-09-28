@@ -1,0 +1,12 @@
+---
+- include: configuration/opdk-credentials.yml
+  vars:
+    hosts: 'planet'
+
+- include: components/opdk-create-download-component-archive.yml
+  vars:
+    hosts: 'planet[0]'
+    jdk_version: '1.8'
+  tags:
+  - create_download
+

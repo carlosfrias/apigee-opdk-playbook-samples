@@ -38,6 +38,12 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-archive-installer
   name: opdk-setup-bootstrap-archive-installer
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-upload-archive
+  name: opdk-setup-bootstrap-archive-installer
+
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-archive-installer
+  name: opdk-setup-bootstrap-archive-installer
+
 - src: https://github.com/carlosfrias/apigee-opdk-setup-silent-installation-config
   name: opdk-setup-silent-installation-config
 

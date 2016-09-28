@@ -23,6 +23,7 @@
 
 - hosts: '{{ hosts }}'
   serial: 1
+
   pre_tasks:
   - name: Check for router server self report
     ignore_errors: yes

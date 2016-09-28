@@ -3,10 +3,11 @@
   become: yes
   vars:
     pubkey: '~/.ssh/id_rsa.pub'
-  tasks:
-  - name: Load credentials from encrypted file
-    include_vars: '~/.apigee/credentials.yml'
 
+  vars_files:
+  - ~/.apigee/credentials.yml
+
+  tasks:
   - name: Build EC2 facts cache
     ec2_facts:
 
@@ -28,6 +29,7 @@
       backrefs: yes
     notify:
     - Restart SSH service
+    when: user == 'root'
 
   handlers:
   - name: Restart SSH service

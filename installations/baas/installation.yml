@@ -1,0 +1,47 @@
+---
+- include: configuration/opdk-credentials.yml
+  vars:
+    hosts: 'baas'
+
+- include: configuration/opdk-setup-os.yml
+  vars:
+    hosts: 'baas'
+
+- include: configuration/update-user.yml
+  vars:
+    hosts: 'planet'
+    user: 'root'
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'cassandra'
+    component_profile: 'c'
+  tags:
+  - cassandra
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'elastic'
+    component_profile: 'e'
+  tags:
+  - elastic
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'baas'
+    component_profile: 'b'
+  tags:
+  - baas
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'portal'
+    component_profile: 'p'
+  tags:
+  - portal
+
+- include: configuration/opdk-baas-create-org-user.yml
+  vars:
+    hosts: 'baas[0]'
+  tags:
+  - org

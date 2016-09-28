@@ -4,8 +4,8 @@ image_id: ami-755ba918
 instance_type: 't2.medium'
 wait: yes
 assign_public_ip: yes
-session_name: 1601-edge-ol68-dc2
-application: edge
+session_name: 1601-baas-oraclelinux68-1
+application: baas
 pod: NA
 start: 1
 end: 10

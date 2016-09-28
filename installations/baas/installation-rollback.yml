@@ -1,0 +1,6 @@
+---
+- hosts: '{{ hosts }}'
+  vars:
+    remove_data_on_rollback: true
+  roles:
+  - opdk-setup-bootstrap-rollback

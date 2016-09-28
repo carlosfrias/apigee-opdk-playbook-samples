@@ -1,0 +1,37 @@
+---
+- hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - opdk-setup-apigee-user
+  - opdk-setup-os-limits
+
+- hosts: '{{ hosts }}'
+  roles:
+  - opdk-setup-openjdk
+
+- hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - opdk-setup-bootstrap
+
+- hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - opdk-setup-silent-installation-config
+  - opdk-setup-component-installer
+  - opdk-setup-bootstrap-create-archive
+  - opdk-setup-bootstrap-download-archive
+  tags:
+  - create
+
+- hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - opdk-setup-bootstrap-download-archive
+  tags:
+  - download
+

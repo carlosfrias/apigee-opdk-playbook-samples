@@ -25,13 +25,5 @@
   - opdk-setup-bootstrap-create-archive
   - opdk-setup-bootstrap-download-archive
   tags:
-  - create
-
-- hosts: '{{ hosts }}'
-  vars_files:
-  - ~/.apigee/credentials.yml
-  roles:
-  - opdk-setup-bootstrap-download-archive
-  tags:
   - download
 

@@ -1,6 +1,8 @@
 ---
 - hosts: '{{ hosts }}'
   strategy: free
+  vars_files:
+  - ~/.apigee/credentials.yml
   roles:
   - opdk-setup-apigee-user
   - opdk-setup-os-limits
@@ -12,6 +14,8 @@
 
 - hosts: '{{ hosts }}'
   strategy: free
+  vars_files:
+  - ~/.apigee/credentials.yml
   roles:
   - opdk-setup-bootstrap
 

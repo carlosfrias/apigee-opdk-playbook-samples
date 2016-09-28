@@ -16,7 +16,7 @@
   tags:
   - user
 
-- include: components/opdk-create-download-component-archive.yml
+- include: components/opdk-create-download-apigee-mirror.yml
   vars:
     hosts: 'planet[0]'
     jdk_version: '1.8'

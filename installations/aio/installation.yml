@@ -16,7 +16,6 @@
   vars:
     hosts: 'planet'
 
-  tasks:
 - include: configuration/update-user.yml
   vars:
     hosts: planet

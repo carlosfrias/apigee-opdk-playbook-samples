@@ -1,5 +1,6 @@
 ---
 - hosts: '{{ hosts }}'
+  serial: 1
   vars_files:
   - ~/.apigee/credentials.yml
   roles:

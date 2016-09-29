@@ -8,5 +8,5 @@
     hosts: 'planet'
     jdk_version: '1.8'
   tags:
-  - upload
+  - upload_install
 

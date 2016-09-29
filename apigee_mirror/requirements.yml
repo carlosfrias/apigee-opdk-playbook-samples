@@ -32,6 +32,9 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap
   name: opdk-setup-bootstrap
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-rollback
+  name: opdk-setup-bootstrap-rollback
+
 - src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-upload-archive
   name: opdk-setup-bootstrap-upload-archive
 

@@ -1,8 +1,4 @@
 ---
-- include: configuration/opdk-credentials.yml
-  vars:
-    hosts: 'planet'
-
 - include: configuration/opdk-setup-os.yml
   vars:
     hosts: 'planet'

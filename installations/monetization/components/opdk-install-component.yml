@@ -5,12 +5,24 @@
   - ~/.apigee/credentials.yml
   roles:
   - opdk-setup-apigee-user
+  tags:
+  - user
+
+- hosts: '{{ hosts }}'
+  strategy: free
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
   - opdk-setup-os-limits
+  tags:
+  - os
 
 - hosts: '{{ hosts }}'
   strategy: free
   roles:
   - opdk-setup-openjdk
+  tags:
+  - openjdk
 
 - hosts: '{{ hosts }}'
   strategy: free
@@ -18,6 +30,8 @@
   - ~/.apigee/credentials.yml
   roles:
   - opdk-setup-bootstrap
+  tags:
+  - bootstrap
 
 - hosts: '{{ hosts }}'
   strategy: free
@@ -26,10 +40,14 @@
   roles:
   - opdk-setup-silent-installation-config
   - opdk-setup-component-installer
+  tags:
+  - installer
 
 - hosts: '{{ hosts }}'
   serial: 1
   roles:
+  - { role: opdk-set-reachable, reachable: false }
   - { role: opdk-setup-component, profile: '{{ component_profile }}' }
-
-
+  - { role: opdk-set-reachable, reachable: true }
+  tags:
+  - component

@@ -10,7 +10,6 @@
   - opdk-setup-os-minimum
   - opdk-setup-selinux-disable
   - opdk-shutdown-iptables
-  - opdk-enable-swap
   - opdk-time-sync
   - opdk-setup-os-common
 

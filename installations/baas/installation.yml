@@ -1,16 +1,22 @@
 ---
 - include: configuration/opdk-credentials.yml
   vars:
-    hosts: 'baas'
+    hosts: 'planet'
+  tags:
+  - credentials
 
 - include: configuration/opdk-setup-os.yml
   vars:
-    hosts: 'baas'
+    hosts: 'planet'
+  tags:
+  - os
 
 - include: configuration/update-user.yml
   vars:
     hosts: 'planet'
     user: 'root'
+  tags:
+  - user
 
 - include: components/opdk-install-component.yml
   vars:

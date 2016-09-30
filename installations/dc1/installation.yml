@@ -2,6 +2,8 @@
 - include: configuration/opdk-credentials.yml
   vars:
     hosts: 'planet'
+  tags:
+  - credentials
 
 - include: configuration/opdk-setup-os.yml
   vars:
@@ -94,7 +96,7 @@
   vars:
     hosts: 'dc-1-rmp'
   tags:
-  - validate
+  - validation
 
 - include: validations/opdk-internal-port-connectivity-validator.yml
   tags:

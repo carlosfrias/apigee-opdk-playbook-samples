@@ -2,6 +2,8 @@
 - include: configuration/opdk-credentials.yml
   vars:
     hosts: 'ms,rmp'
+  tags:
+  - credentials
 
 - include: components/opdk-install-component.yml
   vars:
@@ -9,11 +11,13 @@
     component_profile: 'mo'
     opdk_monetization: true
   tags:
-  - mo-ms
+  - money
 
 - include: components/opdk-provision-component.yml
   vars:
     hosts: 'ms,rmp'
+  tags:
+  - provision
 
 - include: validations/opdk-setup-status.yml
   vars:

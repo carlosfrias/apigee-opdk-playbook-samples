@@ -2,6 +2,8 @@
 - include: configuration/opdk-credentials.yml
   vars:
     hosts: 'planet'
+  tags:
+  - credentials
 
 - hosts: 'planet'
   tasks:
@@ -15,11 +17,15 @@
 - include: configuration/opdk-setup-os.yml
   vars:
     hosts: 'planet'
+  tags:
+  - os
 
 - include: configuration/update-user.yml
   vars:
-    hosts: planet
-    user: root
+    hosts: 'planet'
+    user: 'root'
+  tags:
+  - user
 
 - include: components/opdk-install-component.yml
   vars:
@@ -31,21 +37,19 @@
 - include: configuration/opdk-setup-org-config.yml
   vars:
     hosts: 'planet'
+  tags:
+  - org-config
 
 - include: configuration/opdk-setup-org.yml
   vars:
     hosts: 'planet'
+  tags:
+  - org
 
 - include: validations/opdk-setup-validate.yml
+  tags:
+  - validation
 
 - include: validations/opdk-setup-log-files.yml
-  tags:
-  - logs
-
-- hosts: dc-1
-  strategy: free
-  roles:
-  - opdk-setup-default-settings
-  - opdk-setup-apigee-log-files
   tags:
   - logs

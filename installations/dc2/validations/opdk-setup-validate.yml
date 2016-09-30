@@ -13,5 +13,4 @@
   - opdk-setup-default-settings
   - opdk-setup-validate-cleanup
   tags:
-  - validate
   - validate-cleanup

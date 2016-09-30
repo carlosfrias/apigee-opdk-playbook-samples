@@ -1,0 +1,10 @@
+---
+- hosts: '{{ hosts }}'
+  strategy: free
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: opdk-set-reachable, reachable: '{{ reachability }}', server_type: 'router' }
+  - { role: opdk-set-reachable, reachable: '{{ reachability }}', server_type: 'mp' }
+  tags:
+  - user

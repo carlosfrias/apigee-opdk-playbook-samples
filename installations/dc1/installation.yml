@@ -32,11 +32,25 @@
   tags:
   - ms
 
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'false'
+  tags:
+  - rmp
+
 - include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-1-rmp'
     component_profile: 'rmp'
     jdk_version: '1.8'
+  tags:
+  - rmp
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'true'
   tags:
   - rmp
 

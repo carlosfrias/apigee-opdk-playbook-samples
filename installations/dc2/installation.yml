@@ -6,11 +6,15 @@
 - include: configuration/opdk-setup-os.yml
   vars:
     hosts: 'planet'
+  tags:
+  - os
 
 - include: configuration/update-user.yml
   vars:
     hosts: 'planet'
     user: 'root'
+  tags:
+  - user
 
 - include: components/opdk-install-component.yml
   vars:
@@ -34,6 +38,8 @@
   vars:
      hosts: 'dc-1-ms'
      jdk_version: '1.8'
+  tags:
+  - ms
 
 - include: components/opdk-install-component.yml
   vars:
@@ -48,6 +54,8 @@
   vars:
     hosts: 'dc-2-ds'
     jdk_version: '1.8'
+  tags:
+  - ms
 
 - include: components/opdk-install-component.yml
   vars:
@@ -56,7 +64,14 @@
     jdk_version: '1.8'
     opdk_ldap_type: '2'
   tags:
-  - ms2
+  - ms
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'false'
+  tags:
+  - rmp
 
 - include: components/opdk-install-component.yml
   vars:
@@ -67,12 +82,33 @@
   tags:
   - rmp
 
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-2-rmp'
+    reachability: 'true'
+  tags:
+  - rmp
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'false'
+  tags:
+  - rmp
+
 - include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-1-rmp'
     component_profile: 'rmp'
     jdk_version: '1.8'
     opdk_ldap_type: '2'
+  tags:
+  - rmp
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'true'
   tags:
   - rmp
 

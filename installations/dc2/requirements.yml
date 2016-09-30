@@ -29,6 +29,9 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-component
   name: opdk-setup-component
 
+- src: https://github.com/carlosfrias/apigee-opdk-set-reachable
+  name: opdk-set-reachable
+
 - src: https://github.com/carlosfrias/apigee-opdk-setup-component-installer
   name: opdk-setup-component-installer
 

@@ -2,6 +2,7 @@
 - hosts: '{{ hosts }}'
   strategy: free
   roles:
+  - opdk-enable-swap
   - opdk-setup-apigee-user
   - opdk-setup-os-postgres
   - opdk-setup-postgres-config

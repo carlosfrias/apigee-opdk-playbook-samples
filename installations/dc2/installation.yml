@@ -70,7 +70,7 @@
 
 - include: configuration/opdk-set-reachable.yml
   vars:
-    hosts: 'dc-1-rmp'
+    hosts: 'dc-2-rmp'
     reachability: 'false'
   tags:
   - rmp

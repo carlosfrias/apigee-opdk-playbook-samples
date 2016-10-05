@@ -1,11 +1,11 @@
 ---
 - include: configuration/opdk-credentials.yml
   vars:
-    hosts: 'planet'
+    hosts: planet
   tags:
   - credentials
 
-- hosts: 'planet'
+- hosts: planet
   tasks:
   - name: Update cache with basic node info
     setup:
@@ -16,33 +16,33 @@
 
 - include: configuration/opdk-setup-os.yml
   vars:
-    hosts: 'planet'
+    hosts: planet
   tags:
   - os
 
 - include: configuration/update-user.yml
   vars:
-    hosts: 'planet'
+    hosts: planet
     user: 'root'
   tags:
   - user
 
 - include: components/opdk-install-component.yml
   vars:
-    hosts: 'planet'
+    hosts: planet
     component_profile: 'aio'
   tags:
   - aio
 
 - include: configuration/opdk-setup-org-config.yml
   vars:
-    hosts: 'planet'
+    hosts: planet
   tags:
   - org-config
 
 - include: configuration/opdk-setup-org.yml
   vars:
-    hosts: 'planet'
+    hosts: planet
   tags:
   - org
 

@@ -20,6 +20,9 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-openjdk
   name: opdk-setup-openjdk
 
+- src: https://github.com/carlosfrias/apigee-opdk-setup-os-limits
+  name: opdk-setup-os-limits
+
 - src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap
   name: opdk-setup-bootstrap
 

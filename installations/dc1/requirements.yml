@@ -103,3 +103,6 @@
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ui
   name: internal-port-connectivity-validator-ui
+
+- src: https://github.com/carlosfrias/apigee-opdk-enable-swap
+  name: opdk-enable-swap

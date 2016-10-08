@@ -20,84 +20,58 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-component
 
 - src: https://github.com/carlosfrias/apigee-opdk-set-reachable
-  name: apigee-opdk-set-reachable
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-component-installer
-  name: apigee-opdk-setup-component-installer
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-selinux-disable
-  name: apigee-opdk-setup-selinux-disable
 
 - src: https://github.com/carlosfrias/apigee-opdk-shutdown-iptables
-  name: apigee-opdk-shutdown-iptables
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-org-config
-  name: apigee-opdk-setup-org-config
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-org
-  name: apigee-opdk-setup-org
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-validate
-  name: apigee-opdk-setup-validate
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-validate-cleanup
-  name: apigee-opdk-setup-validate-cleanup
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-apigee-log-files
-  name: apigee-opdk-setup-apigee-log-files
 
 - src: https://github.com/carlosfrias/apigee-fetch-files
-  name: fetch-files
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-config
-  name: apigee-opdk-setup-postgres-config
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-master
-  name: apigee-opdk-setup-postgres-master
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-standby
-  name: apigee-opdk-setup-postgres-standby
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-os-postgres
-  name: apigee-opdk-setup-os-postgres
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-status
-  name: apigee-opdk-setup-status
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-rollback
-  name: apigee-opdk-setup-bootstrap-rollback
 
 - src: https://github.com/carlosfrias/apigee-opdk-cassandra-rebuild
-  name: apigee-opdk-cassandra-rebuild
 
 - src: https://github.com/carlosfrias/apigee-opdk-cassandra-client-update
-  name: apigee-opdk-cassandra-client-update
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-mp
-  name: internal-port-connectivity-validator-mp
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ldap
-  name: internal-port-connectivity-validator-ldap
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-cassandra
-  name: internal-port-connectivity-validator-cassandra
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-zookeeper
-  name: internal-port-connectivity-validator-zookeeper
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ms
-  name: internal-port-connectivity-validator-ms
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-postgres
-  name: internal-port-connectivity-validator-postgres
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-router
-  name: internal-port-connectivity-validator-router
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-qpid
-  name: internal-port-connectivity-validator-qpid
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ui
-  name: internal-port-connectivity-validator-ui
 
+- src: https://github.com/carlosfrias/apigee-opdk-start-components.git
 

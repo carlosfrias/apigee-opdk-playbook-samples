@@ -1,6 +1,7 @@
 ---
 - hosts: '{{ hosts }}'
   roles:
+  - apigee-opdk-start-components
   - apigee-opdk-cassandra-client-update
   tags:
   - c-update

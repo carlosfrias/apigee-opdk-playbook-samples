@@ -2,7 +2,6 @@
 - hosts: '{{ hosts }}'
   serial: 1
   roles:
-  - { role: apigee-opdk-setup-boostrap-rollback, remove_apigee: true }
   - apigee-opdk-setup-postgres-standby
   tags:
   - pgstandby

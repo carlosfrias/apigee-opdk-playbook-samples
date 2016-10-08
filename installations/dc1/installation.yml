@@ -84,7 +84,7 @@
   vars:
     hosts: 'dc-1-ms'
   tags:
-  - org-config
+  - org
 
 - include: configuration/opdk-setup-org.yml
   vars:

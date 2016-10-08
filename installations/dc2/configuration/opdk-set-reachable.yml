@@ -7,4 +7,4 @@
   - { role: apigee-opdk-set-reachable, reachable: '{{ reachability }}', server_type: 'router' }
   - { role: apigee-opdk-set-reachable, reachable: '{{ reachability }}', server_type: 'mp' }
   tags:
-  - user
+  - reachability

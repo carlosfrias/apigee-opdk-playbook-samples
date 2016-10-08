@@ -2,7 +2,7 @@
 - hosts: ms
   serial: 1
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   tasks:
   - name: Obtain management server self report
     ignore_errors: yes
@@ -19,7 +19,7 @@
 - hosts: rmp
   serial: 1
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   tasks:
   - name: Obtain router server self report
     ignore_errors: yes
@@ -48,7 +48,7 @@
 - hosts: qpid
   serial: 1
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   tasks:
   - name: Obtain qpid server self report
     ignore_errors: yes
@@ -65,7 +65,7 @@
 - hosts: pg
   serial: 1
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   tasks:
   - name: Obtain postgres server self report
     ignore_errors: yes

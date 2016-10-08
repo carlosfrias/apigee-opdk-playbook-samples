@@ -5,5 +5,5 @@
   vars:
     opdk_monetization: true
   roles:
-  - opdk-setup-silent-installation-config
+  - apigee-opdk-setup-silent-installation-config
 

@@ -2,7 +2,7 @@
 - hosts: '{{ hosts }}'
   serial: 1
   roles:
-  - opdk-setup-default-settings
-  - { role: opdk-backup, component_profile: '{{ profile }}' }
+  - apigee-opdk-setup-default-settings
+  - { role: apigee-opdk-backup, component_profile: '{{ profile }}' }
 
 

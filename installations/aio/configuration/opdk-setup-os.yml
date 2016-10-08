@@ -7,10 +7,10 @@
   - name: Load credentials from encrypted file
     include_vars: '~/.apigee/credentials.yml'
   roles:
-  - opdk-setup-os-minimum
-  - opdk-enable-swap
-  - opdk-setup-selinux-disable
-  - opdk-shutdown-iptables
-  - opdk-time-sync
-  - opdk-setup-os-common
+  - apigee-opdk-setup-os-minimum
+  - apigee-opdk-enable-swap
+  - apigee-opdk-setup-selinux-disable
+  - apigee-opdk-shutdown-iptables
+  - apigee-opdk-time-sync
+  - apigee-opdk-setup-os-common
 

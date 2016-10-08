@@ -4,9 +4,9 @@
   gather_facts: no
   strategy: free
   roles:
-  - opdk-setup-os-minimum
-  - opdk-setup-selinux-disable
-  - opdk-shutdown-iptables
-  - opdk-time-sync
-  - opdk-setup-os-common
+  - apigee-opdk-setup-os-minimum
+  - apigee-opdk-setup-selinux-disable
+  - apigee-opdk-shutdown-iptables
+  - apigee-opdk-time-sync
+  - apigee-opdk-setup-os-common
 

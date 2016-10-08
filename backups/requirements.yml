@@ -1,6 +1,6 @@
 ---
 - src: https://github.com/carlosfrias/apigee-opdk-setup-default-settings
-  name: opdk-setup-default-settings
+  name: apigee-opdk-setup-default-settings
 
 - src: https://github.com/carlosfrias/apigee-opdk-backup
-  name: opdk-backup
+  name: apigee-opdk-backup

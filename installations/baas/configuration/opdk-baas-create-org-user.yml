@@ -1,6 +1,6 @@
 ---
 - hosts: '{{ hosts }}'
   roles:
-  - opdk-baas-create-org-and-user
+  - apigee-opdk-baas-create-org-and-user
   tags:
   - org

@@ -2,15 +2,15 @@
 - hosts: rmp
   serial: 1
   roles:
-  - opdk-setup-default-settings
-  - opdk-setup-validate
+  - apigee-opdk-setup-default-settings
+  - apigee-opdk-setup-validate
   tags:
   - validate
 
 - hosts: rmp
   serial: 1
   roles:
-  - opdk-setup-validate-cleanup
+  - apigee-opdk-setup-validate-cleanup
   tags:
   - validate
   - validate-cleanup

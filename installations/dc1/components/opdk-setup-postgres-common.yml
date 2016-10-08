@@ -2,10 +2,10 @@
 - hosts: '{{ hosts }}'
   strategy: free
   roles:
-  - opdk-enable-swap
-  - opdk-setup-apigee-user
-  - opdk-setup-os-postgres
-  - opdk-setup-postgres-config
+  - apigee-opdk-enable-swap
+  - apigee-opdk-setup-apigee-user
+  - apigee-opdk-setup-os-postgres
+  - apigee-opdk-setup-postgres-config
 
 - include: opdk-install-component.yml
   vars:
@@ -18,7 +18,7 @@
 - hosts: '{{ hosts }}'
   serial: 1
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   tasks:
   - name: Obtain server self report
     opdk_server_self:

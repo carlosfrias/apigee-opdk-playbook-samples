@@ -2,4 +2,4 @@
 - hosts: '{{ hosts }}'
   strategy: free
   roles:
-  - opdk-setup-org
+  - apigee-opdk-setup-org

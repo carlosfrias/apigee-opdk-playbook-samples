@@ -2,6 +2,6 @@
 - hosts: '{{ hosts }}'
   serial: 1
   roles:
-  - opdk-setup-postgres-standby
+  - apigee-opdk-setup-postgres-standby
   tags:
   - pgstandby

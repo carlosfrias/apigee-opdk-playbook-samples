@@ -3,7 +3,7 @@
   vars_files:
   - ~/.apigee/credentials.yml
   roles:
-  - opdk-setup-apigee-user
+  - apigee-opdk-setup-apigee-user
   tags:
   - user
 
@@ -11,13 +11,13 @@
   vars_files:
   - ~/.apigee/credentials.yml
   roles:
-  - opdk-setup-os-limits
+  - apigee-opdk-setup-os-limits
   tags:
   - os
 
 - hosts: '{{ hosts }}'
   roles:
-  - opdk-setup-openjdk
+  - apigee-opdk-setup-openjdk
   tags:
   - openjdk
 
@@ -25,7 +25,7 @@
   vars_files:
   - ~/.apigee/credentials.yml
   roles:
-  - opdk-setup-bootstrap
+  - apigee-opdk-setup-bootstrap
   tags:
   - bootstrap
 
@@ -33,8 +33,8 @@
   vars_files:
   - ~/.apigee/credentials.yml
   roles:
-  - opdk-setup-silent-installation-config
-  - opdk-setup-component-installer
+  - apigee-opdk-setup-silent-installation-config
+  - apigee-opdk-setup-component-installer
   tags:
   - installer
 
@@ -42,7 +42,7 @@
   vars_files:
   - ~/.apigee/credentials.yml
   roles:
-  - opdk-setup-bootstrap-create-archive
+  - apigee-opdk-setup-bootstrap-create-archive
   tags:
   - create
 
@@ -50,7 +50,7 @@
   vars_files:
   - ~/.apigee/credentials.yml
   roles:
-  - opdk-setup-bootstrap-download-archive
+  - apigee-opdk-setup-bootstrap-download-archive
   tags:
   - download
 

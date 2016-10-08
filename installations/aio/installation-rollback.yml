@@ -1,4 +1,4 @@
 ---
 - hosts: planet
   roles:
-  - { role: opdk-setup-bootstrap-rollback, remove_data: true }
+  - { role: apigee-opdk-setup-bootstrap-rollback, remove_apigee: true }

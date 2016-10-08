@@ -16,6 +16,6 @@
   - ec2_facts:
 
   roles:
-  - aws-terminate
+  - apigee-opdk-aws-terminate
 
 

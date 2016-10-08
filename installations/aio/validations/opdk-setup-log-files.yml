@@ -2,7 +2,7 @@
 - hosts: planet
   strategy: free
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   - { role: fetch-files, fetch_files: '{{ apigee_log_files }}' }
   tags:
   - logs
@@ -12,7 +12,7 @@
   become: true
   strategy: free
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   - { role: fetch-files, fetch_files: '{{ system_config_files }}' }
   tags:
   - logs
@@ -21,7 +21,7 @@
 - hosts: planet
   strategy: free
   roles:
-  - opdk-setup-default-settings
+  - apigee-opdk-setup-default-settings
   - { role: fetch-files, fetch_files: '{{ apigee_config_files }}' }
   tags:
   - logs

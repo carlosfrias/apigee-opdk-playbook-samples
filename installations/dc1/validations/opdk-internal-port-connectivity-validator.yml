@@ -2,37 +2,37 @@
 
 - hosts: rmp
   roles:
-  - internal-port-connectivity-validator-mp
+  - apigee-internal-port-connectivity-validator-mp
 
 - hosts: ldap
   roles:
-  - internal-port-connectivity-validator-ldap
+  - apigee-internal-port-connectivity-validator-ldap
 
 - hosts: ds
   roles:
-  - internal-port-connectivity-validator-cassandra
+  - apigee-internal-port-connectivity-validator-cassandra
 
 - hosts: ds
   roles:
-  - internal-port-connectivity-validator-zookeeper
+  - apigee-internal-port-connectivity-validator-zookeeper
 
 - hosts: ms
   roles:
-  - internal-port-connectivity-validator-ms
+  - apigee-internal-port-connectivity-validator-ms
 
 - hosts: pg
   roles:
-  - internal-port-connectivity-validator-postgres
+  - apigee-internal-port-connectivity-validator-postgres
 
 - hosts: rmp
   roles:
-  - internal-port-connectivity-validator-router
+  - apigee-internal-port-connectivity-validator-router
 
 - hosts: qpid
   roles:
-  - internal-port-connectivity-validator-qpid
+  - apigee-internal-port-connectivity-validator-qpid
 
 - hosts: ui
   roles:
-  - internal-port-connectivity-validator-ui
+  - apigee-internal-port-connectivity-validator-ui
 

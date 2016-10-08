@@ -17,4 +17,4 @@
     include_vars: "profiles/{{ provision_profile }}.yml"
 
   roles:
-  - aws-create
+  - apigee-opdk-aws-create

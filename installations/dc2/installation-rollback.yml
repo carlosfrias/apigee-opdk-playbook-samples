@@ -1,6 +1,6 @@
 ---
 - hosts: '{{ hosts }}'
   vars:
-    remove_data: true
+    remove_apigee: true
   roles:
-  - opdk-setup-bootstrap-rollback
+  - apigee-opdk-setup-bootstrap-rollback

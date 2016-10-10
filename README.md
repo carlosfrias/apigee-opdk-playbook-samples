@@ -4,6 +4,16 @@ Apigee OPDK Playbook Samples
 This project uses the Apigee OPDK roles written with Ansible to assemble sample playbooks that demonstrate how to 
 install and configure Apigee. 
 
+Usage Instructions
+==================
+
+* Configure Ansible to install Apigee OPDK as indicated in the 
+[Apigee Setup Ansible](https://github.com/carlosfrias/apigee-setup-ansible) project for details. 
+* Install Apigee OPDK ansible roles.
+* Update ~/.apigee/credentials.yml.
+* Update your inventory file.
+* Update your ansible configuration file with your inventory file or folder name, the remote-user and ssh private_key_file.
+
 Functionality Available
 =======================
 
@@ -12,10 +22,9 @@ functionality provided by these roles:
 
  * Installation of an arbitrarily sized data center
  * Selective rollback of an installed component to assist in troubleshooting
- * Roles are idempotent for 15.07 and tolerate being executed multiple times without damaging the installation
  * Silent installation file is dynamically generated to the defined planet and data center.
- * Roles install Apigee Edge OPDK 15.07.03, 16.01 and 16.05 by simply specifying the desired version
- * Integrated AWS to manage the lifecycle of AMI instances 
+ * Roles install Apigee Edge OPDK 4.16.01, 4.16.05 and 4.16.09 by simply specifying the desired version
+ * Integrated with AWS is available to manage the lifecycle of AMI instances 
  * Roles adjust to account for either CentOS 6 or greater; Oracle Linux 6 or greater and RHEL 6 or greater. 
  * Roles adjust to also account for whether they are executed in within the virtualized environments provisioned by AWS 
   and Vagrant or a non-virtualized server.  
@@ -27,9 +36,8 @@ Requirements
 
 * Apigee account for downloading binaries
 * Apigee license file
-* Vagrant and Virtualbox or an AWS account
-* Ansible 2.1  
-* Understanding of how to use Ansible
+* Ansible 2.1 or greater  
+* Internet accessible machine either for full installation or to create an Apigee mirror.
 
 Folder Structure
 ================
@@ -143,32 +151,12 @@ have been referenced as data centers. The internal configurations of OPDK and Ba
 and so forth. Following this historical precedent we also define the regions with their corresponding installation role
 to provide a semantic model as follows:
  
-    # List all of nodes with a name
-    n1 ansible_host={{ ip_address }}
-    n2 ansible_host={{ ip_address }}
-    n3 ansible_host={{ ip_address }} zk_observer=true
-    n4 ansible_host={{ ip_address }}
-    n5 ansible_host={{ ip_address }}
-    n6 ansible_host={{ ip_address }}
-    n7 ansible_host={{ ip_address }}
-    n8 ansible_host={{ ip_address }}
-    n9 ansible_host={{ ip_address }}
-    
     # Listing that references all data centers that compose a planet. 
     [planet]
     dc-1
 
     [dc-1]
     # Listing of all nodes in data center 1 (dc-1)
-    n1
-    n2
-    n3
-    n4
-    n5
-    n6
-    n7
-    n8
-    n9
     
     [ds:children]
     # Listing of all the Cassandra and Zookeeper nodes across the planet
@@ -176,64 +164,30 @@ to provide a semantic model as follows:
     
     [dc-1-ds]
     # Listing of all the Cassandra and Zookeeper nodes in dc-1
-    n1
-    n2
-    n3
-    
-    [ms:children]
-    dc-1-ms
     
     [dc-1-ms]
     # Listing of all the Management Server nodes in dc-1
-    n1
-    
-    [ldap:children]
-     dc-1-ldap
      
     [dc-1-ldap]
     # Listing of all OpenLDAP nodes in dc-1
-    n1
-    
-    [rmp:children]
-    dc-1-rmp
     
     [dc-1-rmp]
     # Listing of all Router and Message Processor nodes in dc-1
-    n4
-    n5
-    
-    [qpid:children]
-    dc-1-qpid
     
     [dc-1-qpid]
     # Listing of all Qpid nodes in dc-1
-    n6
-    n7
     
-    [pg:children]
-    dc-1-pg
-
-    
-    [dc-1-pg:children]
+    [dc-1-pg]
     # Listing of all Postgres nodes in dc-1
-    n8
-    n9
     
     [dc-1-pgmaster]
     # Listing of the single Postgres master node in dc-1
-    # Use this only if you will have a master / standby configuration
-    # Delete this header if you do not have a master /standby configuration
-    n8
     
     [dc-1-pgstandby]
     # Listing of the single Postgres standby node in dc-1
-    # Use this only if you will have a master / standby configuration
-    # Delete this header if you do not have a master /standby configuration
-    n9
     
     [dc-1-ui]
     # Listing of the UI node in dc-1
-    n1
     
 ## Zookeeper Observer Nodes
 Zookeeper nodes can be designated as an observer node. Ansible inventory files allow variables to be assigned to servers.

@@ -1,4 +1,4 @@
-Apigee OPDK Installation of a single Data Center
+Apigee OPDK Installation of a Single Data Center
 ================================================
 
 # Ansible Roles

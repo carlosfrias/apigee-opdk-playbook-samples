@@ -1,15 +1,8 @@
 ---
 - hosts: planet
   strategy: free
-  vars:
-    apigee_log_files:
-    - { dir: '{{ opdk_installer_path }}/', name: '*.log' }
-    - { dir: '{{ opdk_installer_path }}/var/log/', name: '*.log' }
-    - { dir: '{{ opdk_installer_path }}/', name: '*.txt' }
-    - { dir: '{{ apigee_installation_home }}/var/log/', name: '*.log' }
-    - { dir: '{{ apigee_installation_home }}/', name: '*.out' }
-
   roles:
+  - apigee-opdk-setup-default-settings
   - { role: apigee-fetch-files, fetch_files: '{{ apigee_log_files }}' }
   tags:
   - logs
@@ -19,6 +12,7 @@
   become: true
   strategy: free
   roles:
+  - apigee-opdk-setup-default-settings
   - { role: apigee-fetch-files, fetch_files: '{{ system_config_files }}' }
   tags:
   - logs
@@ -27,6 +21,7 @@
 - hosts: planet
   strategy: free
   roles:
+  - apigee-opdk-setup-default-settings
   - { role: apigee-fetch-files, fetch_files: '{{ apigee_config_files }}' }
   tags:
   - logs

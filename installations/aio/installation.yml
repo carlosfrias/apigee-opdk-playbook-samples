@@ -1,4 +1,6 @@
 ---
+- include: configuration/update_cache.yml
+
 - include: configuration/opdk-credentials.yml
   vars:
     hosts: planet

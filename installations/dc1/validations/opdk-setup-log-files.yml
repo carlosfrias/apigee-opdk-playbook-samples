@@ -4,7 +4,7 @@
   strategy: free
   roles:
   - apigee-opdk-setup-default-settings
-  - { role: apigee-fetch-files, fetch_files: '{{ system_config_files }}' }
+  - { role: apigee-fetch-files, fetch_files: '{{ system_config_files }}', fetched_files_dir: '{{ fetched_configs_dir }}' }
   tags:
   - logs
   - os-logs
@@ -14,7 +14,7 @@
   strategy: free
   roles:
   - apigee-opdk-setup-default-settings
-  - { role: apigee-fetch-files, fetch_files: '{{ apigee_log_files }}' }
+  - { role: apigee-fetch-files, fetch_files: '{{ apigee_log_files }}', fetched_files_dir: '{{ fetched_logs_dir }}' }
   tags:
   - logs
   - apigee-logs
@@ -24,7 +24,7 @@
   strategy: free
   roles:
   - apigee-opdk-setup-default-settings
-  - { role: apigee-fetch-files, fetch_files: '{{ apigee_config_files }}' }
+  - { role: apigee-fetch-files, fetch_files: '{{ apigee_config_files }}', fetched_files_dir: '{{ fetched_configs_dir }}' }
   tags:
   - logs
   - config-logs

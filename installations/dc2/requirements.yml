@@ -51,10 +51,6 @@
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-bootstrap-rollback
 
-- src: https://github.com/carlosfrias/apigee-opdk-cassandra-rebuild
-
-- src: https://github.com/carlosfrias/apigee-opdk-cassandra-client-update
-
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-mp
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ldap
@@ -73,6 +69,10 @@
 
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ui
 
-- src: https://github.com/carlosfrias/apigee-opdk-start-components.git
-
 - src: https://github.com/carlosfrias/apigee-opdk-enable-swap
+
+- src: https://github.com/carlosfrias/apigee-opdk-cassandra-rebuild
+
+- src: https://github.com/carlosfrias/apigee-opdk-cassandra-client-update
+
+- src: https://github.com/carlosfrias/apigee-opdk-start-components.git

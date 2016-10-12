@@ -1,5 +1,7 @@
 ---
 - hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
   serial: 1
   roles:
   - apigee-opdk-setup-default-settings
@@ -8,6 +10,8 @@
   - validate
 
 - hosts: '{{ hosts }}'
+  vars_files:
+  - ~/.apigee/credentials.yml
   serial: 1
   roles:
   - apigee-opdk-setup-default-settings

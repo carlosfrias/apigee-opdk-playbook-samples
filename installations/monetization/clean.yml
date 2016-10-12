@@ -15,4 +15,6 @@
     - '~/.apigee/ssh_keys'
     - '~/.apigee/logs'
     - '~/.apigee/configs'
+    - '~/.apigee/logs_configs'
+
 

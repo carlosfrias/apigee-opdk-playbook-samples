@@ -1,24 +1,29 @@
 ---
 - include: configuration/update_cache.yml
+  tags:
+  - cache
+  - os-pre-req
 
 - include: configuration/opdk-credentials.yml
   vars:
     hosts: 'planet'
   tags:
   - credentials
+  - os-pre-req
 
 - include: configuration/opdk-setup-os.yml
   vars:
     hosts: 'planet'
   tags:
   - os
+  - os-pre-req
 
 - include: configuration/update-user.yml
   vars:
     hosts: 'planet'
     user: 'root'
   tags:
-  - user
+  - root-user
 
 - include: components/opdk-install-component.yml
   vars:

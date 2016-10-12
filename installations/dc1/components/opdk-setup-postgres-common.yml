@@ -1,22 +1,14 @@
 ---
 - hosts: '{{ hosts }}'
   strategy: free
+  vars_files:
+  - ~/.apigee/credentials.yml
   roles:
   - apigee-opdk-enable-swap
+  - apigee-opdk-setup-default-settings
   - apigee-opdk-setup-apigee-user
   - apigee-opdk-setup-os-postgres
   - apigee-opdk-setup-postgres-config
-
-- hosts: '{{ hosts }}'
-  roles:
-  - apigee-opdk-setup-default-settings
-  tasks:
-  - name: Remove pgdata from pgstandby server
-    become: true
-    file:
-      path: '{{ apigee_installation_home }}/data/apigee-postgresql/pgdata'
-      state: absent
-    when: pg_component is defined and pg_component == 'standby'
 
 - include: opdk-install-component.yml
   vars:

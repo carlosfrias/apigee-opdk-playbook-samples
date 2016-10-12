@@ -4,7 +4,7 @@
   gather_facts: no
   strategy: free
   pre_tasks:
-  - name: Load credentials from encrypted file
+  - name: Load credentials from file
     include_vars: '~/.apigee/credentials.yml'
   roles:
   - apigee-opdk-setup-os-minimum

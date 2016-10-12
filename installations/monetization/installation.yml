@@ -1,9 +1,12 @@
 ---
 - include: configuration/update_cache.yml
+  tags:
+  - cache
+  - os-pre-req
 
 - include: configuration/opdk-credentials.yml
   vars:
-    hosts: 'ms,rmp'
+    hosts: 'planet'
   tags:
   - credentials
 

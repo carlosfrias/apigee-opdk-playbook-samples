@@ -16,7 +16,7 @@
   - apigee-opdk-setup-os-limits
 #  - { role: apigee-fetch-files, fetch_files: '{{ system_config_files }}', fetched_files_dir: '{{ fetched_configs_dir }}' }
   tags:
-  - os
+  - os-tuning
 
 - hosts: '{{ hosts }}'
   strategy: free

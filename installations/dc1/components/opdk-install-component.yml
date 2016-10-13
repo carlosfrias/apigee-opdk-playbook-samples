@@ -23,6 +23,8 @@
 
 - hosts: '{{ hosts }}'
   strategy: free
+  vars_files:
+  - ~/.apigee/credentials.yml
   roles:
   - apigee-opdk-setup-openjdk
   tags:
@@ -40,6 +42,11 @@
   - apigee-pre-req
   - apigee-bootstrap
 
+- include: ../configuration/update_cache.yml
+  tags:
+  - apigee-pre-req
+  - apigee-installer
+
 - hosts: '{{ hosts }}'
   strategy: free
   vars_files:
@@ -54,6 +61,8 @@
 
 - hosts: '{{ hosts }}'
   serial: 1
+  vars_files:
+  - ~/.apigee/credentials.yml
   roles:
   - apigee-opdk-setup-default-settings
   - { role: apigee-opdk-setup-component, profile: '{{ component_profile }}' }

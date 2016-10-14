@@ -3,6 +3,7 @@
   tags:
   - cache
   - os-pre-req
+  - apigee-pre-req
 
 - include: configuration/opdk-credentials.yml
   vars:

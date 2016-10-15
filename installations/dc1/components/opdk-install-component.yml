@@ -42,11 +42,6 @@
   - apigee-pre-req
   - apigee-bootstrap
 
-- include: ../configuration/update_cache.yml
-  tags:
-  - apigee-pre-req
-  - apigee-installer
-
 - hosts: '{{ hosts }}'
   strategy: free
   vars_files:

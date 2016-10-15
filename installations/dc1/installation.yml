@@ -4,6 +4,11 @@
   - cache
   - os-pre-req
   - apigee-pre-req
+  - ms
+  - ds
+  - qpid
+  - pgmaster
+  - pgstandby
 
 - include: configuration/load-opdk-credentials.yml
   vars:

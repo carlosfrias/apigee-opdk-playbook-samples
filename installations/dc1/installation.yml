@@ -5,12 +5,13 @@
   - os-pre-req
   - apigee-pre-req
 
-- include: configuration/opdk-credentials.yml
+- include: configuration/load-opdk-credentials.yml
   vars:
     hosts: 'planet'
   tags:
   - credentials
   - os-pre-req
+  - apigee-pre-req
 
 - include: configuration/opdk-setup-os.yml
   vars:

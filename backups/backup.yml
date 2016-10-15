@@ -1,5 +1,5 @@
 ---
-- include: configuration/opdk-credentials.yml
+- include: configuration/load-opdk-credentials.yml
   vars:
     hosts: 'planet'
   tags:

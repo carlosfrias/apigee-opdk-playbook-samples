@@ -10,11 +10,11 @@
 
   - ec2_facts:
 
-  - name: "Load default provisioning settings"
-    include_vars: aws-create-default-settings.yml
-
   - name: "Load provision profile settings"
     include_vars: "profiles/{{ provision_profile }}.yml"
+
+  - name: "Load operating system"
+    include_vars: "os/{{ os_selection }}.yml"
 
   roles:
   - apigee-opdk-aws-create

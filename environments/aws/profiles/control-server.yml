@@ -1,11 +1,7 @@
 ---
-# centos 7.2
-image_id: ami-7209f41f
 instance_type: 't2.medium'
 wait: yes
 assign_public_ip: yes
-session_name: ansible-control-server
+session_name: opdk-control-server
 application: edge
 pod: NA
-start: 1
-end: 1

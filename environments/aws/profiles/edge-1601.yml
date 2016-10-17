@@ -2,8 +2,6 @@
 instance_type: 't2.medium'
 wait: yes
 assign_public_ip: yes
-session_name: 1601-edge-centos72-aio
+session_name: "edge-1601-dc"
 application: edge
 pod: NA
-start: 1
-end: 1

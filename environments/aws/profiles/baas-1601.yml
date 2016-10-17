@@ -2,8 +2,6 @@
 instance_type: 't2.medium'
 wait: yes
 assign_public_ip: yes
-session_name: 1601-baas-rhel72-1
+session_name: baas-1601-dc
 application: baas
 pod: NA
-start: 1
-end: 10

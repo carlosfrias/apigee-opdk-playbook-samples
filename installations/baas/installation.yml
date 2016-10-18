@@ -3,6 +3,7 @@
   tags:
   - cache
   - os-pre-req
+  - apigee-pre-req
 
 - include: configuration/load-opdk-credentials.yml
   vars:
@@ -10,6 +11,7 @@
   tags:
   - credentials
   - os-pre-req
+  - apigee-pre-req
 
 - include: configuration/opdk-setup-os.yml
   vars:
@@ -24,6 +26,13 @@
     user: 'root'
   tags:
   - root-user
+
+- include: components/opdk-pre-requisites.yml
+  vars:
+    hosts: 'dc-1-ds'
+    jdk_version: '1.8'
+  tags:
+  - apigee-pre-req
 
 - include: components/opdk-install-component.yml
   vars:

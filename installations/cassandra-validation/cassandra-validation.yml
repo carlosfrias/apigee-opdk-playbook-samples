@@ -1,0 +1,15 @@
+---
+- include: configuration/update_cache.yml
+
+- hosts: "{{ hosts }}"
+  roles:
+  - apigee-opdk-setup-default-settings
+  tasks:
+  - name: Capture nodetool ring status
+    shell: "{{ apigee_installation_home }}/apigee-cassandra/bin/nodetool -h 127.0.0.1 status"
+    register: ring_status
+
+  - name: Report nodetool ring status
+    debug:
+      var: ring_status.stdout_lines
+

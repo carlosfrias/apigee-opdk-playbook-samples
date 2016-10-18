@@ -35,7 +35,6 @@
 - include: components/opdk-pre-requisites.yml
   vars:
     hosts: 'dc-1-ds'
-    component_profile: 'ds'
     jdk_version: '1.8'
   tags:
   - apigee-pre-req

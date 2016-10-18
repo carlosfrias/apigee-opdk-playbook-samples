@@ -1,0 +1,311 @@
+---
+- include: configuration/update_cache.yml
+  tags:
+  - cache
+  - os-pre-req
+  - apigee-pre-req
+  - dc-1
+  - dc-2
+
+- include: configuration/load-opdk-credentials.yml
+  vars:
+    hosts: 'planet'
+  tags:
+  - credentials
+  - os-pre-req
+  - apigee-pre-req
+  - dc-1
+  - dc-2
+  - dc-1-validation
+  - dc-2-validation
+
+- include: configuration/opdk-setup-os.yml
+  vars:
+    hosts: 'planet'
+  tags:
+  - os
+  - os-pre-req
+  - dc-1
+  - dc-2
+
+- include: configuration/update-user.yml
+  vars:
+    hosts: 'planet'
+    user: 'root'
+  tags:
+  - root-user
+  - dc-1
+  - dc-2
+
+
+# Region 1
+- include: components/opdk-pre-requisites.yml
+  vars:
+    hosts: 'dc-1'
+    jdk_version: '1.8'
+  tags:
+  - apigee-pre-req
+  - dc-1
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-ds'
+    component_profile: 'ds'
+  tags:
+  - dc-1-ds
+  - dc-1
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-ms'
+    component_profile: 'ms'
+  tags:
+  - dc-1-ms
+  - dc-1
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'false'
+  tags:
+  - dc-1-rmp
+  - dc-1
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    component_profile: 'rmp'
+  tags:
+  - dc-1-rmp
+  - dc-1
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'true'
+  tags:
+  - dc-1-rmp
+  - dc-1
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-qpid'
+    component_profile: 'qs'
+  tags:
+  - dc-1-qpid
+  - dc-1
+
+- include: components/opdk-setup-postgres-common.yml
+  vars:
+    hosts: 'dc-1-pgmaster'
+    pg_component: 'master'
+  tags:
+  - dc-1-pgmaster
+  - dc-1
+  - dc-1-pg
+
+- include: components/opdk-setup-postgres-common.yml
+  vars:
+    hosts: 'dc-1-pgstandby'
+    pg_component: 'standby'
+  tags:
+  - dc-1-pgstandby
+  - dc-1
+  - dc-1-pg
+
+- include: configuration/opdk-setup-org-config.yml
+  vars:
+    hosts: 'dc-1-ms'
+  tags:
+  - dc-1-org
+  - dc-1
+
+- include: configuration/opdk-setup-org.yml
+  vars:
+    hosts: 'dc-1-ms'
+  tags:
+  - dc-1-org
+  - dc-1
+
+- include: validations/opdk-setup-validate.yml
+  vars:
+    hosts: 'dc-1-rmp'
+  tags:
+  - dc-1-validation
+  - dc-1
+
+# Region 2
+- include: components/opdk-pre-requisites.yml
+  vars:
+    hosts: 'dc-2'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
+  tags:
+  - apigee-pre-req
+  - dc-2
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-2-ds'
+    component_profile: 'ds'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-ds
+  - dc-2
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-ds'
+    component_profile: 'ds'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-ds
+  - dc-2
+
+- include: components/opdk-cassandra-client-update.yml
+  vars:
+     hosts: 'dc-1-ms'
+     jdk_version: '1.8'
+  tags:
+  - dc-2-ms
+  - dc-2
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-ms'
+    component_profile: 'ms'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-ms
+  - dc-2
+
+- include: components/opdk-cassandra-rebuild.yml
+  vars:
+    hosts: 'dc-2-ds'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-ms
+  - dc-2
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-2-ms'
+    component_profile: 'ms'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-ms
+  - dc-2
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-2-rmp'
+    reachability: 'false'
+  tags:
+  - dc-2-rmp
+  - dc-2
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-2-rmp'
+    component_profile: 'rmp'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-rmp
+  - dc-2
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-2-rmp'
+    reachability: 'true'
+  tags:
+  - dc-2-rmp
+  - dc-2
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'false'
+  tags:
+  - dc-2-rmp
+  - dc-2
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    component_profile: 'rmp'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-rmp
+  - dc-2
+
+- include: configuration/opdk-set-reachable.yml
+  vars:
+    hosts: 'dc-1-rmp'
+    reachability: 'true'
+  tags:
+  - dc-2-rmp
+  - dc-2
+
+- include: components/opdk-install-component.yml
+  vars:
+    hosts: 'dc-2-qpid'
+    component_profile: 'qs'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-qpid
+  - dc-2
+
+- include: components/opdk-setup-postgres-common.yml
+  vars:
+    hosts: 'dc-2-pgmaster'
+    pg_component: 'master'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-pgmaster
+  - dc-2
+  - dc-2-pg
+
+- include: components/opdk-setup-postgres-common.yml
+  vars:
+    hosts: 'dc-2-pgstandby'
+    pg_component: 'standby'
+    jdk_version: '1.8'
+  tags:
+  - dc-2-pgstandby
+  - dc-2
+  - dc-2-pg
+
+- include: configuration/opdk-setup-org-config.yml
+  vars:
+    hosts: 'dc-2-ms'
+  tags:
+  - dc-2-org
+  - dc-2
+
+- include: configuration/opdk-setup-org.yml
+  vars:
+    hosts: 'dc-2-ms'
+  tags:
+  - dc-2-org
+  - dc-2
+
+- include: validations/opdk-setup-validate.yml
+  vars:
+    hosts: 'dc-2-rmp'
+  tags:
+  - dc-2-validation
+  - dc-2
+
+- include: validations/opdk-internal-port-connectivity-validator.yml
+  tags:
+  - port-validator
+
+- include: validations/opdk-setup-status.yml
+  vars:
+    hosts: 'planet'
+  tags:
+  - status
+
+- include: validations/opdk-setup-log-files.yml
+  tags:
+  - logs

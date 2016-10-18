@@ -1,0 +1,13 @@
+---
+- hosts: planet
+  vars_files:
+  - ~/.apigee/credentials.yml
+  pre_tasks:
+  - setup:
+
+  - ec2_facts:
+    when: "{{ ansible_bios_version | lower | search('amazon') }}"
+
+  roles:
+  - apigee-opdk-setup-default-settings
+

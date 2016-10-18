@@ -1,0 +1,6 @@
+---
+- hosts: '{{ hosts }}'
+  roles:
+  - apigee-opdk-setup-status
+  tags:
+  - status

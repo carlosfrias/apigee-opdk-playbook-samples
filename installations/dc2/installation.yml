@@ -27,12 +27,19 @@
   tags:
   - root-user
 
+- include: components/opdk-pre-requisites.yml
+  vars:
+    hosts: 'planet'
+    jdk_version: '1.8'
+    opdk_ldap_type: '2'
+  tags:
+  - apigee-pre-req
+
 - include: components/opdk-install-component.yml
   vars:
     hosts: 'dc-2-ds'
     component_profile: 'ds'
     jdk_version: '1.8'
-    opdk_ldap_type: '2'
   tags:
   - ds
 
@@ -57,7 +64,6 @@
     hosts: 'dc-1-ms'
     component_profile: 'ms'
     jdk_version: '1.8'
-    opdk_ldap_type: '2'
   tags:
   - ms
 
@@ -73,7 +79,6 @@
     hosts: 'dc-2-ms'
     component_profile: 'ms'
     jdk_version: '1.8'
-    opdk_ldap_type: '2'
   tags:
   - ms
 
@@ -89,7 +94,6 @@
     hosts: 'dc-2-rmp'
     component_profile: 'rmp'
     jdk_version: '1.8'
-    opdk_ldap_type: '2'
   tags:
   - rmp
 
@@ -112,7 +116,6 @@
     hosts: 'dc-1-rmp'
     component_profile: 'rmp'
     jdk_version: '1.8'
-    opdk_ldap_type: '2'
   tags:
   - rmp
 
@@ -128,7 +131,6 @@
     hosts: 'dc-2-qpid'
     component_profile: 'qs'
     jdk_version: '1.8'
-    opdk_ldap_type: '2'
   tags:
   - qpid
 
@@ -137,7 +139,6 @@
     hosts: 'dc-2-pgmaster'
     pg_component: 'master'
     jdk_version: '1.8'
-    opdk_ldap_type: '2'
   tags:
   - pgmaster
 
@@ -146,21 +147,18 @@
     hosts: 'dc-2-pgstandby'
     pg_component: 'standby'
     jdk_version: '1.8'
-    opdk_ldap_type: '2'
   tags:
   - pgstandby
 
 - include: configuration/opdk-setup-org-config.yml
   vars:
     hosts: 'dc-2-ms'
-    opdk_ldap_type: '2'
   tags:
   - org
 
 - include: configuration/opdk-setup-org.yml
   vars:
     hosts: 'dc-2-ms'
-    opdk_ldap_type: '2'
   tags:
   - org
 

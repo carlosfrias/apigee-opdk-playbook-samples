@@ -30,7 +30,7 @@
       backrefs: yes
     notify:
     - Restart SSH service
-    when: user == 'root'
+    when: enable_root_login is defined and enable_root_login
 
   handlers:
   - name: Restart SSH service

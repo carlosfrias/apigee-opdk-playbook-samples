@@ -6,6 +6,9 @@
   - apigee-pre-req
   - dc-1
   - dc-2
+  - apigee-logs
+  - logs
+  - os-logs
 
 - include: configuration/load-opdk-credentials.yml
   vars:
@@ -18,6 +21,9 @@
   - dc-2
   - dc-1-validation
   - dc-2-validation
+  - apigee-logs
+  - logs
+  - os-logs
 
 - include: configuration/opdk-setup-os.yml
   vars:

@@ -9,6 +9,7 @@
   - apigee-logs
   - logs
   - os-logs
+  - ds
 
 - include: configuration/load-opdk-credentials.yml
   vars:
@@ -24,6 +25,7 @@
   - apigee-logs
   - logs
   - os-logs
+  - ds
 
 - include: configuration/opdk-setup-os.yml
   vars:
@@ -33,6 +35,7 @@
   - os-pre-req
   - dc-1
   - dc-2
+  - ds
 
 - include: configuration/update-user.yml
   vars:
@@ -42,7 +45,7 @@
   - root-user
   - dc-1
   - dc-2
-
+  - ds
 
 # Region 1
 - include: components/opdk-pre-requisites.yml
@@ -52,6 +55,7 @@
   tags:
   - apigee-pre-req
   - dc-1
+  - ds
 
 - include: components/opdk-install-component.yml
   vars:
@@ -60,6 +64,7 @@
   tags:
   - dc-1-ds
   - dc-1
+  - ds
 
 - include: components/opdk-install-component.yml
   vars:
@@ -149,6 +154,7 @@
   tags:
   - apigee-pre-req
   - dc-2
+  - ds
 
 - include: components/opdk-install-component.yml
   vars:
@@ -158,6 +164,7 @@
   tags:
   - dc-2-ds
   - dc-2
+  - ds
 
 - include: components/opdk-install-component.yml
   vars:
@@ -167,6 +174,7 @@
   tags:
   - dc-2-ds
   - dc-2
+  - ds
 
 - include: components/opdk-cassandra-client-update.yml
   vars:
@@ -175,6 +183,7 @@
   tags:
   - dc-2-ms
   - dc-2
+  - ds
 
 - include: components/opdk-install-component.yml
   vars:
@@ -192,6 +201,7 @@
   tags:
   - dc-2-ms
   - dc-2
+  - ds
 
 - include: components/opdk-install-component.yml
   vars:

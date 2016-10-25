@@ -148,7 +148,7 @@
 # Region 2
 - include: components/opdk-pre-requisites.yml
   vars:
-    hosts: 'dc-2'
+    hosts: 'planet'
     jdk_version: '1.8'
     opdk_ldap_type: '2'
   tags:
@@ -321,7 +321,11 @@
     hosts: 'planet'
   tags:
   - status
+  - dc-1
+  - dc-2
 
 - include: validations/opdk-setup-log-files.yml
   tags:
   - logs
+  - dc-1
+  - dc-2

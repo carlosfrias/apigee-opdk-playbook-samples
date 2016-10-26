@@ -35,8 +35,6 @@
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-validate-cleanup
 
-- src: https://github.com/carlosfrias/apigee-opdk-setup-apigee-log-files
-
 - src: https://github.com/carlosfrias/apigee-fetch-files
 
 - src: https://github.com/carlosfrias/apigee-opdk-setup-postgres-config

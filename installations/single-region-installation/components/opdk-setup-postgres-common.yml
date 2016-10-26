@@ -6,7 +6,6 @@
   roles:
   - apigee-opdk-enable-swap
   - apigee-opdk-setup-default-settings
-  - apigee-opdk-setup-apigee-user
   - apigee-opdk-setup-os-postgres
   - apigee-opdk-setup-postgres-config
 

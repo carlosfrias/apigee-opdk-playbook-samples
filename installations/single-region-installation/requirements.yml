@@ -68,3 +68,11 @@
 - src: https://github.com/carlosfrias/apigee-internal-port-connectivity-validator-ui
 
 - src: https://github.com/carlosfrias/apigee-opdk-enable-swap
+
+- src: https://github.com/carlosfrias/apigee-opdk-start-component
+
+- src: https://github.com/carlosfrias/apigee-opdk-stop-component
+
+- src: https://github.com/carlosfrias/apigee-opdk-backup
+
+- src: https://github.com/carlosfrias/apigee-opdk-restore

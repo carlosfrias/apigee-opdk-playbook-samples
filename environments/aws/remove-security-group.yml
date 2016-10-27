@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  vars_files:
+  - ~/.apigee/credentials.yml
+
+  tasks:
+  - name: Remove security group
+    ec2_group:
+      state: "{{ ec2_group_state | d('absent') }}"
+      name: "{{ security_group | d('EDGEMICRO') }}"
+      description: Security group for Edgemicro
+      aws_access_key: "{{ aws_access_key|default(lookup('env', 'AWS_ACCESS_KEY_ID')) }}"
+      aws_secret_key: "{{ aws_secret_key|default(lookup('env', 'AWS_SECRET_ACCESS_KEY')) }}"
+      aws_region: "{{ aws_region|default(lookup('env', 'AWS_REGION'))  }}"

@@ -1,6 +1,8 @@
 ---
 - hosts: '{{ hosts }}'
-
+  roles:
+  - apigee-opdk-setup-os-minimum
+  - apigee-opdk-setup-os-common
   tasks:
   - name: Install needed Python libraries
     become: yes
@@ -37,12 +39,16 @@
   - name: Install edgemicro
     become: yes
     npm:
-      name: '{{ item }}'
+      name: '{{ item.name }}'
+      version: '{{ item.version }}'
       global: yes
       state: present
     with_items:
-    - edgemicro
+    - { name: edgemicro, version: '2.2.1' }
 
   - name: Create edgemicro default configuration
     shell: 'edgemicro init'
 
+
+# configure with edge
+# edgemicro private configure -m http://172.31.23.239:8080 -r http://172.31.22.140:9001 -o opdk -e test -u opdk@apigee.com -p Apigee123! -v default

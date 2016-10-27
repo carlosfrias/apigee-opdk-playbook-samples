@@ -1,7 +1,0 @@
----
-instance_type: 't2.medium'
-wait: yes
-assign_public_ip: yes
-session_name: "1601-edge-ol68-dc"
-application: edge
-pod: NA

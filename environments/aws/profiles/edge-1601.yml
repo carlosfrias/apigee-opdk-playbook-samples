@@ -2,6 +2,37 @@
 instance_type: 't2.medium'
 wait: yes
 assign_public_ip: yes
-session_name: "edge-1601-dc"
+session_name: edge-1601-dc
 application: edge
 pod: NA
+security_group: OPDK
+rules:
+  - proto: tcp
+    cidr_ip: 0.0.0.0/0
+    from_port: 80
+    to_port: 80
+  - proto: tcp
+    cidr_ip: 0.0.0.0/0
+    from_port: 9000
+    to_port: 9010
+  - proto: tcp
+    cidr_ip: 0.0.0.0/0
+    from_port: 8080
+    to_port: 8080
+  - proto: tcp
+    cidr_ip: 0.0.0.0/0
+    from_port: 22
+    to_port: 22
+  - proto: tcp
+    cidr_ip: 0.0.0.0/0
+    from_port: 443
+    to_port: 443
+rules_egress:
+  - proto: tcp
+    cidr_ip: 0.0.0.0/0
+    from_port: 80
+    to_port: 80
+  - proto: tcp
+    cidr_ip: 172.16.0.0/12
+    from_port: 0
+    to_port: 65535

@@ -17,4 +17,5 @@
     include_vars: "os/{{ os_selection }}.yml"
 
   roles:
+  - apigee-opdk-aws-security-group
   - apigee-opdk-aws-create

@@ -1,0 +1,49 @@
+---
+- hosts: '{{ hosts_ms }}'
+  gather_facts: yes
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: apigee-opdk-stop-components, component_name: '{{ ms_server }}' }
+
+- hosts: '{{ hosts_qpid }}'
+  gather_facts: yes
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: apigee-opdk-stop-components, component_name: '{{ qpid_server }}' }
+
+- hosts: '{{ hosts_ps }}'
+  gather_facts: yes
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: apigee-opdk-stop-components, component_name: '{{ ps_server }}' }
+
+- hosts: '{{ hosts }}'
+  gather_facts: yes
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: apigee-opdk-restore, component_name: '{{ component }}', backup_time: '{{ backup }}' }
+
+- hosts: '{{ hosts_ms }}'
+  gather_facts: yes
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: apigee-opdk-start-components, component_name: '{{ ms_server }}' }
+
+- hosts: '{{ hosts_qpid }}'
+  gather_facts: yes
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: apigee-opdk-start-components, component_name: '{{ qpid_server }}' }
+
+- hosts: '{{ hosts_ps }}'
+  gather_facts: yes
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: apigee-opdk-start-components, component_name: '{{ ps_server }}' }

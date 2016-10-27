@@ -1,0 +1,7 @@
+---
+- hosts: '{{ hosts }}'
+  gather_facts: yes
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - { role: apigee-opdk-backup, component_name: '{{ component }}' }

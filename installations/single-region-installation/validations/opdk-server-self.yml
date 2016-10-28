@@ -1,6 +1,8 @@
 ---
 - hosts: ms
   serial: 1
+  vars_files:
+  - ~/.apigee/credentials.yml
   roles:
   - apigee-opdk-setup-default-settings
   tasks:
@@ -17,6 +19,8 @@
     when: edge_ms_self is defined
 
 - hosts: rmp
+  vars_files:
+  - ~/.apigee/credentials.yml
   serial: 1
   roles:
   - apigee-opdk-setup-default-settings
@@ -47,6 +51,8 @@
 
 - hosts: qpid
   serial: 1
+  vars_files:
+  - ~/.apigee/credentials.yml
   roles:
   - apigee-opdk-setup-default-settings
   tasks:
@@ -64,6 +70,8 @@
 
 - hosts: pg
   serial: 1
+  vars_files:
+  - ~/.apigee/credentials.yml
   roles:
   - apigee-opdk-setup-default-settings
   tasks:

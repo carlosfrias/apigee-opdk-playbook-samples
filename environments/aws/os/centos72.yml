@@ -1,3 +1,4 @@
 ---
 # centos 7.2
 image_id: ami-7209f41f
+env_name: centos72

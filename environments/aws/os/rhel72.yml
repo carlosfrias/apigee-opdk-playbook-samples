@@ -1,3 +1,4 @@
 ---
 # rhel 7.2
 image_id: ami-2051294a
+`env_name: rhel72

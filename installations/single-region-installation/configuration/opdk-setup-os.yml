@@ -1,4 +1,10 @@
 ---
+- hosts: planet
+  become: true
+  strategy: free
+  roles:
+  - apigee-opdk-aws-setup
+
 - hosts: '{{ hosts }}'
   become: yes
   gather_facts: no

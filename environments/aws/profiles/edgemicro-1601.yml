@@ -3,7 +3,7 @@ instance_type: 't2.medium'
 wait: yes
 assign_public_ip: yes
 session_name: edgemicro-1601-dc
-application: edge
+application: edgemicro
 pod: NA
 env: edgemicro
 security_group: EDGEMICRO
@@ -37,7 +37,7 @@ rules_egress:
     cidr_ip: 0.0.0.0/0
     from_port: 80
     to_port: 80
-  - proto: tcp
+  - proto: all
     cidr_ip: 172.16.0.0/12
     from_port: 0
     to_port: 65535
@@ -47,5 +47,5 @@ rules_egress:
     to_port: 443
   - proto: udp
     cidr_ip: 0.0.0.0/0
-    from_port: 443
+    from_port: 123
     to_port: 123

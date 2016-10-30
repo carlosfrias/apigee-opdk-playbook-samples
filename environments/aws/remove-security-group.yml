@@ -5,6 +5,11 @@
   - ~/.apigee/credentials.yml
 
   pre_tasks:
+  - name: Refresh setup
+    setup:
+
+  - name: Refresh EC2_facts
+    ec2_facts:
 
   roles:
-  - { role: apigee-opdk-aws-security-group, ec2_group_state: absent }
+  - { role: apigee-opdk-aws-security-group, ec2_group_state: absent, security_group: '{{ security_group }}' }

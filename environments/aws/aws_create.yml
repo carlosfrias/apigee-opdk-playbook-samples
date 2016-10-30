@@ -16,6 +16,9 @@
   - name: "Load operating system"
     include_vars: "os/{{ os_selection }}.yml"
 
+  - name: "Load security group settings"
+    include_vars: "security/{{ security_group }}.yml"
+
   roles:
   - apigee-opdk-aws-security-group
   - apigee-opdk-aws-create

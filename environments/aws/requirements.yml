@@ -1,6 +1,8 @@
 ---
 - src: https://github.com/carlosfrias/apigee-opdk-aws-create
 
+- src: https://github.com/carlosfrias/apigee-opdk-aws-setup
+
 - src: https://github.com/carlosfrias/apigee-opdk-aws-terminate
 
 - src: https://github.com/carlosfrias/apigee-opdk-aws-security-group

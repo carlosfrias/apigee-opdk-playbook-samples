@@ -3,13 +3,13 @@
   connection: local
   vars_files:
   - ~/.apigee/credentials.yml
-
   pre_tasks:
-  - name: Refresh setup
-    setup:
+  - setup:
 
-  - name: Refresh EC2_facts
-    ec2_facts:
+  - ec2_facts:
+
+  - name: "Load security group settings"
+    include_vars: "security/{{ security_group }}.yml"
 
   roles:
   - { role: apigee-opdk-aws-security-group, ec2_group_state: absent, security_group: '{{ security_group }}' }

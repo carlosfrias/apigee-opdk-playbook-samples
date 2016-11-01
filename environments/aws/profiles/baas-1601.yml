@@ -4,6 +4,7 @@ wait: yes
 assign_public_ip: yes
 session_name: baas-1601-dc
 application: baas
+aws_env_name: baas
 pod: NA
 security_group: OPDK
 rules:

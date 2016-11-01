@@ -1,4 +1,3 @@
 ---
 # oraclelinux 6.8
 image_id: ami-755ba918
-env_name: ol68

@@ -1,7 +1,0 @@
----
-- hosts: '{{ hosts }}'
-  serial: 1
-  roles:
-  - apigee-opdk-setup-postgres-master
-  tags:
-  - pgmaster

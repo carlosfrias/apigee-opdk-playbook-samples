@@ -1,7 +1,0 @@
----
-instance_type: 't2.medium'
-wait: yes
-assign_public_ip: yes
-session_name: edgemicro-1601-dc
-application: edgemicro
-pod: NA

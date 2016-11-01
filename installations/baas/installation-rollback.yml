@@ -1,8 +1,0 @@
----
-- include: configuration/update_cache.yml
-
-- hosts: '{{ hosts }}'
-  vars:
-    remove_apigee: true
-  roles:
-  - apigee-opdk-setup-bootstrap-rollback

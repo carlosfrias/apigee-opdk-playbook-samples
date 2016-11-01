@@ -1,6 +1,0 @@
----
-- include: configuration/update_cache.yml
-
-- hosts: planet
-  roles:
-  - { role: apigee-opdk-setup-bootstrap-rollback, remove_apigee: true }

@@ -1,6 +1,0 @@
----
-- hosts: '{{ hosts }}'
-  strategy: free
-  roles:
-  - apigee-opdk-setup-org-config
-

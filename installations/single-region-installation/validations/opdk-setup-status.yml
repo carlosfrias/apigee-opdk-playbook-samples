@@ -1,8 +1,0 @@
----
-- hosts: '{{ hosts }}'
-  roles:
-  - apigee-opdk-setup-status
-  tags:
-  - status
-
-- include: opdk-server-self.yml

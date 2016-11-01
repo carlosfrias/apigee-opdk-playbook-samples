@@ -1,6 +1,0 @@
----
-- hosts: '{{ hosts }}'
-  vars_files:
-  - ~/.apigee/credentials.yml
-  roles:
-  - apigee-opdk-baas-create-org-and-user

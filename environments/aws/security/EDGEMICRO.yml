@@ -43,7 +43,7 @@ rules_egress:
     cidr_ip: 172.16.0.0/12
     from_port: 22
     to_port: 22
-  - proto: udp
+  - proto: tcp
     cidr_ip: 0.0.0.0/0
-    from_port: 123
-    to_port: 123
+    from_port: 9001
+    to_port: 9001

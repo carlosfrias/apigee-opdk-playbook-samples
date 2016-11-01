@@ -8,8 +8,13 @@
 
   - ec2_facts:
 
+  - name: Validate security_group is provided
+    fail:
+      msg: "Please provide the name of the security_group from the files listed in the security folder"
+    when: security_group is not defined
+
   - name: "Load security group settings"
     include_vars: "security/{{ security_group }}.yml"
 
   roles:
-  - { role: apigee-opdk-aws-security-group, ec2_group_state: absent, security_group: '{{ security_group }}' }
+  - { role: apigee-opdk-aws-security-group, ec2_group_state: "{{ security_group_state | default('absent') }}", security_group: '{{ security_group }}' }

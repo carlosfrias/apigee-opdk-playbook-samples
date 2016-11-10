@@ -11,7 +11,7 @@ Usage Instructions
 [Apigee Setup Ansible](https://github.com/carlosfrias/apigee-opdk-playbook-setup-ansible) project for details. 
 * Install Apigee OPDK ansible roles.
 * Update ~/.apigee/credentials.yml.
-* Update your inventory file [Updating your Inventory File](https://github.com/carlosfrias/apigee-opdk-playbook-setup-ansible/inventory.md).
+* Update your inventory file [Updating your Inventory File](https://github.com/carlosfrias/apigee-opdk-playbook-setup-ansible/blob/master/inventory.md).
 * Update your ansible configuration file with your inventory file or folder name, the remote-user and ssh private_key_file.
 
 Functionality Available

@@ -8,7 +8,7 @@ Usage Instructions
 ==================
 
 * Configure Ansible to install Apigee OPDK as indicated in the 
-[Apigee Setup Ansible](https://github.com/carlosfrias/apigee-setup-ansible) project for details. 
+[Apigee Setup Ansible](https://github.com/carlosfrias/apigee-opdk-playbook-setup-ansible) project for details. 
 * Install Apigee OPDK ansible roles.
 * Update ~/.apigee/credentials.yml.
 * Update your inventory file.

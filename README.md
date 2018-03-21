@@ -99,7 +99,7 @@ You can dispose of the VM to recover disk space with:
  
 <!-- BEGIN Google Required Disclaimer -->
 
-# Required Disclaimer
+# Not Google Product Clause
 
 This is not an officially supported Google product.
 <!-- END Google Required Disclaimer -->

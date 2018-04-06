@@ -103,3 +103,8 @@ You can dispose of the VM to recover disk space with:
 
 This is not an officially supported Google product.
 <!-- END Google Required Disclaimer -->
+<!-- BEGIN Google How To Contribute -->
+# How to Contribute
+
+We'd love to accept your patches and contributions to this project. Please review our [guidelines](CONTRIBUTION.md).
+<!-- END Google How To Contribute -->
